@@ -24,6 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("report-modal").addEventListener("click", (e) => {
     if (e.target.id === "report-modal") closeModal();
   });
+
+  // [추가됨] 과목 추가 모달 배경 클릭 닫기
+  document
+    .getElementById("add-subject-modal")
+    .addEventListener("click", (e) => {
+      if (e.target.id === "add-subject-modal") closeAddSubjectModal();
+    });
+
+  // [추가됨] 엔터키로 과목 추가
+  document
+    .getElementById("new-subject-input")
+    .addEventListener("keypress", (e) => {
+      if (e.key === "Enter") handleAddSubject();
+    });
 });
 
 // 1. 드래그 앤 드롭
@@ -66,7 +80,7 @@ function handleStudentFileSelect(files) {
     document.getElementById("file-count-badge").classList.remove("hidden");
     document.getElementById(
       "student-label"
-    ).innerHTML = `<span class="text-indigo-600 font-bold">${files.length}개</span> 파일 선택됨`;
+    ).innerHTML = `<span class="text-blue-600 font-bold">${files.length}개</span> 파일 선택됨`;
   }
 }
 
@@ -92,8 +106,6 @@ async function startFinalAnalysis() {
 // 3. Mock Data
 function generateMockData() {
   const studentCount = 30;
-
-  // 사용자가 제공한 클러스터 분석 데이터
   const commonClusterData = [
     {
       cluster_index: 1,
@@ -246,7 +258,7 @@ function renderDashboard(data) {
 
     card.innerHTML = `
         <div class="flex justify-between items-start mb-4">
-            <span class="bg-indigo-100 text-indigo-700 font-bold px-2 py-1 rounded text-sm">Q${q.qNum}</span>
+            <span class="bg-blue-100 text-blue-700 font-bold px-2 py-1 rounded text-sm">Q${q.qNum}</span>
         </div>
         <p class="text-slate-800 font-bold text-lg mb-2 line-clamp-3 break-keep">
             ${q.qText}
@@ -285,7 +297,7 @@ function openModal(qData) {
         {
           label: "학생 수",
           data: qData.scoreData,
-          backgroundColor: "#818cf8",
+          backgroundColor: "#60a5fa",
           borderRadius: 4,
           barPercentage: 0.6,
         },
@@ -318,7 +330,7 @@ function openModal(qData) {
       datasets: [
         {
           data: pieData,
-          backgroundColor: ["#fb7185", "#f472b6", "#c084fc", "#818cf8"],
+          backgroundColor: ["#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe"],
           borderWidth: 0,
           hoverOffset: 10,
         },
@@ -370,7 +382,7 @@ function updateClusterDetailPanel(index) {
   const badge = document.getElementById("selected-cluster-badge");
   badge.innerText = `Cluster ${data.cluster_index}`;
   badge.className =
-    "bg-indigo-600 text-white text-xs px-2 py-1 rounded font-bold transition-colors";
+    "bg-blue-600 text-white text-xs px-2 py-1 rounded font-bold transition-colors";
 
   const fillList = (elementId, items) => {
     const list = document.getElementById(elementId);
@@ -398,7 +410,6 @@ function updateClusterDetailPanel(index) {
   fillList("detail-gaps", data.cognitive_diagnosis.logical_gaps);
   fillList("detail-keywords", data.cognitive_diagnosis.missing_keywords);
 
-  // [수정됨] 박스 형태에 맞춰 텍스트만 깔끔하게 삽입 (따옴표 제거)
   document.getElementById("detail-summary").innerText = data.overall_summary;
 }
 
@@ -424,4 +435,68 @@ function changeSubject(subjectName) {
       icon.classList.add("opacity-0");
     }
   });
+}
+
+// [추가됨] 과목 추가 관련 함수들
+function openAddSubjectModal() {
+  const modal = document.getElementById("add-subject-modal");
+  const input = document.getElementById("new-subject-input");
+
+  input.value = ""; // 초기화
+  modal.classList.remove("hidden");
+
+  // 약간의 지연 후 애니메이션 적용 및 포커스
+  setTimeout(() => {
+    modal.classList.add("opacity-100");
+    modal.querySelector("div").classList.remove("scale-95");
+    modal.querySelector("div").classList.add("scale-100");
+    input.focus();
+  }, 10);
+}
+
+function closeAddSubjectModal() {
+  const modal = document.getElementById("add-subject-modal");
+
+  modal.classList.remove("opacity-100");
+  modal.querySelector("div").classList.remove("scale-100");
+  modal.querySelector("div").classList.add("scale-95");
+
+  setTimeout(() => {
+    modal.classList.add("hidden");
+  }, 300);
+}
+
+function handleAddSubject() {
+  const input = document.getElementById("new-subject-input");
+  const subjectName = input.value.trim();
+
+  if (!subjectName) {
+    alert("과목명을 입력해주세요.");
+    return;
+  }
+
+  // 메뉴 컨테이너 찾기
+  const menuContainer = document.getElementById("subject-menu-container");
+  // 구분선 찾기 (이 앞에 추가하기 위함)
+  const divider = document.getElementById("subject-divider");
+
+  // 새 과목 요소 생성 (기존 스타일 그대로 복사)
+  const newLink = document.createElement("a");
+  newLink.href = "#";
+  newLink.className =
+    "subject-item block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors flex justify-between items-center group/item";
+  newLink.onclick = () => changeSubject(subjectName);
+  newLink.innerHTML = `
+    ${subjectName}
+    <i class="fas fa-check text-blue-600 text-xs opacity-0 check-icon" data-subject="${subjectName}"></i>
+  `;
+
+  // DOM에 추가 (구분선 바로 앞에)
+  menuContainer.insertBefore(newLink, divider);
+
+  // 추가 후 바로 선택
+  changeSubject(subjectName);
+
+  // 모달 닫기
+  closeAddSubjectModal();
 }
