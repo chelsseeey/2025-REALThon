@@ -1,6 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Form
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 
 from models import Exam
 from schemas import ExamCreate, ExamResponse
@@ -18,7 +18,8 @@ async def create_exam(
     db_exam = Exam(
         title=exam.title,
         description=exam.description,
-        exam_date=exam.exam_date
+        exam_date=exam.exam_date,
+        llm_analysis_text=exam.llm_analysis_text
     )
     db.add(db_exam)
     db.commit()
@@ -35,17 +36,39 @@ async def get_exams(
     return exams
 
 
-@router.get("/{exam_id}", response_model=ExamResponse)
-async def get_exam(
-    exam_id: int,
+@router.get("/current", response_model=ExamResponse)
+async def get_current_exam(
     db: Session = Depends(get_db)
 ):
-    """시험 상세 조회 (인증 없음)"""
-    exam = db.query(Exam).filter(Exam.id == exam_id).first()
+    """현재 시험 조회 (시험이 하나만 있다고 가정) (인증 없음)"""
+    exam = db.query(Exam).first()
     if not exam:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="시험을 찾을 수 없습니다."
+            detail="시험이 없습니다."
         )
+    return exam
+
+
+@router.post("/llm-analysis", response_model=ExamResponse)
+async def update_exam_llm_analysis(
+    llm_analysis_text: str = Form(...),
+    db: Session = Depends(get_db)
+):
+    """
+    시험지 LLM 분석 텍스트 업데이트 (시험이 하나만 있다고 가정) (인증 없음)
+    
+    - llm_analysis_text: LLM API로 받은 시험지 분석 텍스트
+    """
+    exam = db.query(Exam).first()
+    if not exam:
+        # 시험이 없으면 생성
+        exam = Exam(title="기본 시험")
+        db.add(exam)
+        db.flush()
+    
+    exam.llm_analysis_text = llm_analysis_text
+    db.commit()
+    db.refresh(exam)
     return exam
 

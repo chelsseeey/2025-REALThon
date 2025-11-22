@@ -9,7 +9,6 @@ class Document(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     filename = Column(String, nullable=False)
-    filepath = Column(String, nullable=False)
     original_filename = Column(String, nullable=False)
     file_size = Column(Integer, nullable=False)  # bytes
     file_type = Column(String, nullable=False, default="pdf")  # pdf, answer_sheet, graded_paper 등
@@ -22,34 +21,28 @@ class Exam(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), nullable=False)  # 시험 이름 (예: 2025-1 중간고사)
-    question_pdf_path = Column(String, nullable=True)  # 문제지 PDF 경로
+    description = Column(Text, nullable=True)  # 시험 설명
+    exam_date = Column(Date, nullable=True)  # 실제 시험 날짜
+    llm_analysis_text = Column(Text, nullable=True)  # LLM API로 받은 시험지 분석 텍스트
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     
-    # 관계
-    questions = relationship("Question", back_populates="exam", cascade="all, delete-orphan")
-    answer_sheets = relationship("AnswerSheet", back_populates="exam", cascade="all, delete-orphan")
+    # 관계 (시험이 하나만 있으므로 관계 제거)
 
 
 class Question(Base):
     __tablename__ = "question"
     
     id = Column(Integer, primary_key=True, index=True)
-    exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=True)  # 시험 하나만 있다고 가정
-    number = Column(Integer, nullable=False)  # 시험지 상 문항 번호 (1,2,3,...)
+    number = Column(Integer, nullable=False, unique=True)  # 시험지 상 문항 번호 (1,2,3,...)
     text = Column(Text, nullable=False)  # 문항 지문
     score = Column(Numeric(5, 2), nullable=False)  # 배점 (예: 5.0점)
+    answer_text = Column(Text, nullable=True)  # 정답 텍스트 (정답표에서 저장)
     
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     
-    # 제약 조건 (exam_id가 NULL일 수 있으므로 number만 unique로 변경)
-    __table_args__ = (
-        UniqueConstraint('number', name='uq_question_number'),
-    )
-    
-    # 관계
-    exam = relationship("Exam", back_populates="questions")
+    # 관계 (시험이 하나만 있으므로 exam_id 없이)
     answers = relationship("Answer", back_populates="question", cascade="all, delete-orphan")
     question_pattern = relationship("QuestionPattern", back_populates="question", uselist=False, cascade="all, delete-orphan")
     analysis_results = relationship("AnalysisResult", back_populates="question", cascade="all, delete-orphan")
@@ -59,14 +52,11 @@ class AnswerSheet(Base):
     __tablename__ = "answer_sheet"
     
     id = Column(Integer, primary_key=True, index=True)
-    exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=True)  # 시험 하나만 있다고 가정
-    student_code = Column(String(100), nullable=False)  # 학번/학생 식별자 (로그인 계정 아님)
-    answer_pdf_path = Column(String, nullable=True)  # 답안지 PDF 경로
+    student_code = Column(String(100), nullable=False, unique=True)  # 학번/학생 식별자 (로그인 계정 아님)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     
-    # 관계
-    exam = relationship("Exam", back_populates="answer_sheets")
+    # 관계 (시험이 하나만 있으므로 exam_id 없이)
     answers = relationship("Answer", back_populates="answer_sheet", cascade="all, delete-orphan")
     llm_analyses = relationship("LLMAnalysis", back_populates="answer_sheet", cascade="all, delete-orphan")
 
@@ -114,7 +104,6 @@ class LLMAnalysis(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     answer_sheet_id = Column(Integer, ForeignKey("answer_sheet.id", ondelete="CASCADE"), nullable=False)
-    pdf_path = Column(String, nullable=False)  # 분석한 PDF 경로
     prompt = Column(Text, nullable=True)  # LLM에 보낸 프롬프트
     llm_response = Column(JSON, nullable=False)  # LLM 응답 (JSON)
     llm_api_type = Column(String, nullable=False, default="openai")  # 사용한 LLM API 타입

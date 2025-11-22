@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List
 import json
 
-from models import Exam, AnswerSheet, Answer, Question
+from models import AnswerSheet, Answer, Question
 from schemas import AnswerExtractionResult
 from dependencies import get_db
 
@@ -12,7 +12,6 @@ router = APIRouter(prefix="/answer-sheets", tags=["답안지"])
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
 async def upload_answer_sheets(
-    exam_id: int = Form(None),  # 시험 하나만 있다고 가정하므로 선택적
     extraction_results_json: str = Form(...),
     db: Session = Depends(get_db)
 ):
@@ -21,19 +20,8 @@ async def upload_answer_sheets(
     PDF 파일은 저장하지 않음
     
     - extraction_results_json: LLM 추출 결과들 (JSON 배열 문자열)
-    - exam_id: 시험 ID (선택사항, 시험 하나만 있다고 가정)
     """
     try:
-        # 시험 존재 확인 (exam_id가 있으면 확인, 없으면 None)
-        exam = None
-        if exam_id:
-            exam = db.query(Exam).filter(Exam.id == exam_id).first()
-            if not exam:
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail="시험을 찾을 수 없습니다."
-                )
-        
         # LLM 추출 결과 파싱
         extraction_results = []
         try:
@@ -50,7 +38,7 @@ async def upload_answer_sheets(
         # 각 추출 결과 처리
         for idx, extraction_result in enumerate(extraction_results):
             
-            # AnswerSheet 생성 또는 조회 (exam_id 없이 student_code만으로)
+            # AnswerSheet 생성 또는 조회 (student_code만으로)
             student_code = extraction_result.student_code if extraction_result else f"student_{idx}"
             answer_sheet = db.query(AnswerSheet).filter(
                 AnswerSheet.student_code == student_code
@@ -59,20 +47,15 @@ async def upload_answer_sheets(
             if not answer_sheet:
                 # 새 답안지 생성
                 answer_sheet = AnswerSheet(
-                    exam_id=exam_id,
-                    student_code=student_code,
-                    answer_pdf_path=None  # PDF 저장 안함
+                    student_code=student_code
                 )
                 db.add(answer_sheet)
                 db.flush()  # ID를 얻기 위해 flush
-            else:
-                # 기존 답안지 업데이트
-                answer_sheet.exam_id = exam_id
             
             # LLM 추출 결과로 Answer에 저장
             if extraction_result:
                 for answer_item in extraction_result.answers:
-                    # 문항 조회 (exam_id 없이 number만으로)
+                    # 문항 조회 (number만으로)
                     question = db.query(Question).filter(
                         Question.number == answer_item.question_number
                     ).first()
@@ -109,7 +92,6 @@ async def upload_answer_sheets(
         
         return {
             "message": f"{len(extraction_results)}개의 답안지 정보가 저장되었습니다.",
-            "exam_id": exam_id,
             "uploaded_sheets": uploaded_sheets
         }
     
