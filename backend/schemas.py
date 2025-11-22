@@ -47,8 +47,8 @@ class ExamCreate(ExamBase):
 
 class ExamResponse(ExamBase):
     id: int
+    question_pdf_path: Optional[str] = None
     created_at: datetime
-    updated_at: datetime
     
     class Config:
         from_attributes = True
@@ -58,10 +58,6 @@ class QuestionBase(BaseModel):
     number: int
     text: str
     score: Decimal
-    chapter_label: Optional[str] = None
-    topic_tags: Optional[str] = None
-    rubric_text: Optional[str] = None
-    model_answer: Optional[str] = None
 
 class QuestionCreate(QuestionBase):
     exam_id: int
@@ -96,10 +92,7 @@ class AnswerSheetResponse(AnswerSheetBase):
 # 답변 관련 스키마
 class AnswerBase(BaseModel):
     answer_text: str
-    raw_score: Optional[Decimal] = None
-    max_score: Optional[Decimal] = None
-    is_correct: Optional[bool] = None
-    grading_status: Optional[str] = None
+    raw_score: Optional[Decimal] = None  # LLM JSON에서 추출한 점수
 
 class AnswerCreate(AnswerBase):
     answer_sheet_id: int
@@ -150,6 +143,46 @@ class LLMAnalysisResponse(BaseModel):
     llm_api_type: str
     llm_model: Optional[str] = None
     created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+# LLM 추출 결과 관련 스키마
+class QuestionItem(BaseModel):
+    """문항 정보"""
+    number: int  # 문항 번호
+    text: str  # 문제 내용
+    score: Decimal  # 배점
+
+class QuestionExtractionResult(BaseModel):
+    """LLM이 추출한 문제지 정보"""
+    questions: List[QuestionItem]  # 문제 목록
+    total_questions: int  # 문항수
+
+class AnswerItem(BaseModel):
+    """답변 정보"""
+    question_number: int  # 문항 번호
+    answer_text: str  # 학생 답안
+    score: Optional[Decimal] = None  # 점수
+
+class AnswerExtractionResult(BaseModel):
+    """LLM이 추출한 답안지 정보"""
+    student_code: str  # 학번/학생 식별자
+    answers: List[AnswerItem]  # 문항별 답안 목록
+
+# 오답 분석 결과 관련 스키마
+class AnalysisResultBase(BaseModel):
+    analysis_text: str  # LLM이 제공한 문항별 오답 분석 결과 텍스트
+    cluster_data: Optional[Dict[str, Any]] = None  # 많이 등장한 답안 클러스터링 결과
+
+class AnalysisResultCreate(AnalysisResultBase):
+    question_id: int
+
+class AnalysisResultResponse(AnalysisResultBase):
+    id: int
+    question_id: int
+    created_at: datetime
+    updated_at: datetime
     
     class Config:
         from_attributes = True

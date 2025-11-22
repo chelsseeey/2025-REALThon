@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 import os
 
 from database import engine, Base
-from routers import auth, documents
+from routers import documents, exams, question_papers, answer_sheets, analysis
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
@@ -25,12 +25,11 @@ app.add_middleware(
 )
 
 # 라우터 등록
-app.include_router(auth.router)
 app.include_router(documents.router)
-
-# OAuth2 토큰 URL 설정 (auth 라우터의 /token 엔드포인트 사용)
-from fastapi.security import OAuth2PasswordBearer
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
+app.include_router(exams.router)
+app.include_router(question_papers.router)
+app.include_router(answer_sheets.router)
+app.include_router(analysis.router)
 
 
 @app.get("/")

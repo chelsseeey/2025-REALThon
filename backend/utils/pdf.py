@@ -21,43 +21,105 @@ def is_allowed_file(filename: str) -> bool:
     return ext in ALLOWED_EXTENSIONS
 
 
-def compress_pdf_with_pillow(pdf_path: str, output_path: str = None) -> str:
+def compress_pdf(pdf_path: str, output_path: str = None, quality: int = 85) -> str:
+    """
+    PDF 압축 (PyPDF2 사용, Pillow는 이미지 처리용)
+    
+    Args:
+        pdf_path: 원본 PDF 경로
+        output_path: 저장할 경로 (None이면 원본 경로에 compressed_ 접두사 추가)
+        quality: 압축 품질 (1-100, 낮을수록 압축률 높음)
+    
+    Returns:
+        저장된 파일 경로
+    """
+    try:
+        from PyPDF2 import PdfReader, PdfWriter
+        
+        if output_path is None:
+            # 원본 경로에 compressed_ 접두사 추가
+            path_obj = Path(pdf_path)
+            output_path = str(path_obj.parent / f"compressed_{path_obj.name}")
+        
+        # PDF 읽기
+        reader = PdfReader(pdf_path)
+        writer = PdfWriter()
+        
+        # 모든 페이지 복사 (압축 옵션 적용)
+        for page in reader.pages:
+            # 페이지 압축 (PyPDF2의 기본 압축 사용)
+            page.compress_content_streams()
+            writer.add_page(page)
+        
+        # 메타데이터 복사
+        if reader.metadata:
+            writer.add_metadata(reader.metadata)
+        
+        # 압축된 PDF 저장
+        with open(output_path, "wb") as output_file:
+            writer.write(output_file)
+        
+        return output_path
+    
+    except ImportError:
+        # PyPDF2가 없으면 원본 파일 그대로 반환
+        if output_path is None:
+            output_path = pdf_path
+        import shutil
+        shutil.copy2(pdf_path, output_path)
+        return output_path
+    except Exception as e:
+        raise ValueError(f"PDF 압축 실패: {str(e)}")
+
+
+def compress_pdf_with_pillow(pdf_path: str, output_path: str = None, dpi: int = 150) -> str:
     """
     PDF를 이미지로 변환하여 압축 (Pillow 사용)
     주의: 이 방법은 PDF를 이미지로 변환하므로 텍스트 검색이 불가능합니다.
     
     Args:
         pdf_path: 원본 PDF 경로
-        output_path: 저장할 경로 (None이면 원본 경로에 저장)
+        output_path: 저장할 경로 (None이면 원본 경로에 compressed_ 접두사 추가)
+        dpi: 이미지 해상도 (낮을수록 파일 크기 작음, 기본 150)
     
     Returns:
         저장된 파일 경로
     """
     try:
-        # PyPDF2나 pdf2image를 사용하는 것이 더 적합하지만,
-        # 여기서는 Pillow로 PDF의 첫 페이지를 이미지로 변환하는 예시를 보여줍니다.
-        # 실제로는 pdf2image 라이브러리를 사용하는 것을 권장합니다.
+        from PIL import Image
+        from pdf2image import convert_from_path
         
-        # PDF를 이미지로 변환하려면 pdf2image가 필요하지만,
-        # 여기서는 기본적인 저장만 수행
         if output_path is None:
-            output_path = pdf_path
+            path_obj = Path(pdf_path)
+            output_path = str(path_obj.parent / f"compressed_{path_obj.name}")
         
-        # 실제 압축은 PyPDF2나 pypdf를 사용하는 것이 좋습니다
-        # 여기서는 파일을 그대로 복사
-        import shutil
-        shutil.copy2(pdf_path, output_path)
+        # PDF를 이미지로 변환
+        images = convert_from_path(pdf_path, dpi=dpi)
+        
+        # 이미지를 PDF로 저장 (Pillow 사용)
+        if images:
+            images[0].save(
+                output_path,
+                "PDF",
+                resolution=dpi,
+                save_all=True,
+                append_images=images[1:] if len(images) > 1 else []
+            )
         
         return output_path
     
+    except ImportError:
+        # pdf2image나 Pillow가 없으면 기본 압축 사용
+        return compress_pdf(pdf_path, output_path)
     except Exception as e:
-        raise ValueError(f"PDF 처리 실패: {str(e)}")
+        raise ValueError(f"PDF 이미지 변환 압축 실패: {str(e)}")
 
 
 def save_uploaded_pdf(
     file, 
     user_id: int = None,
-    file_type: str = "pdf"
+    file_type: str = "pdf",
+    compress: bool = True
 ) -> dict:
     """
     업로드된 PDF를 저장
@@ -102,6 +164,18 @@ def save_uploaded_pdf(
     with open(filepath, "wb") as f:
         f.write(file_content)
     
+    # PDF 압축 (선택사항)
+    if compress:
+        try:
+            compressed_path = compress_pdf(str(filepath))
+            # 압축된 파일이 더 작으면 교체
+            if Path(compressed_path).stat().st_size < filepath.stat().st_size:
+                import shutil
+                shutil.move(compressed_path, filepath)
+        except Exception:
+            # 압축 실패 시 원본 파일 사용
+            pass
+    
     # PDF 페이지 수 확인 (선택사항, PyPDF2 필요)
     page_count = None
     try:
@@ -115,7 +189,7 @@ def save_uploaded_pdf(
         # PDF 읽기 실패 시 무시
         pass
     
-    # 파일 크기 확인
+    # 파일 크기 확인 (압축 후)
     file_size = filepath.stat().st_size
     
     return {

@@ -2,9 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from sqlalchemy.orm import Session
 from typing import List
 
-from models import User, Document
+from models import Document
 from schemas import DocumentResponse
-from auth import get_current_user
 from utils.pdf import save_uploaded_pdf, is_allowed_file
 from dependencies import get_db
 
@@ -15,10 +14,9 @@ router = APIRouter(prefix="/documents", tags=["문서"])
 async def upload_pdf(
     file: UploadFile = File(...),
     file_type: str = "pdf",
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """PDF 파일 업로드 및 저장"""
+    """PDF 파일 업로드 및 저장 (인증 없음)"""
     try:
         # 파일 확장자 확인
         if not is_allowed_file(file.filename):
@@ -27,10 +25,10 @@ async def upload_pdf(
                 detail="PDF 파일만 업로드 가능합니다."
             )
         
-        # PDF 저장
+        # PDF 저장 (user_id 없이)
         file_info = save_uploaded_pdf(
             file=file,
-            user_id=current_user.id,
+            user_id=None,
             file_type=file_type
         )
         
@@ -42,7 +40,7 @@ async def upload_pdf(
             file_size=file_info["size"],
             file_type=file_type,
             page_count=file_info.get("page_count"),
-            user_id=current_user.id
+            user_id=None
         )
         db.add(db_document)
         db.commit()
@@ -65,24 +63,21 @@ async def upload_pdf(
 
 @router.get("", response_model=List[DocumentResponse])
 async def get_documents(
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """현재 사용자의 업로드된 문서 목록 조회"""
-    documents = db.query(Document).filter(Document.user_id == current_user.id).all()
+    """업로드된 문서 목록 조회 (인증 없음)"""
+    documents = db.query(Document).all()
     return documents
 
 
 @router.get("/{document_id}", response_model=DocumentResponse)
 async def get_document(
     document_id: int,
-    current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """특정 문서 조회"""
+    """특정 문서 조회 (인증 없음)"""
     document = db.query(Document).filter(
-        Document.id == document_id,
-        Document.user_id == current_user.id
+        Document.id == document_id
     ).first()
     
     if not document:

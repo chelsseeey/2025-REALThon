@@ -36,6 +36,7 @@ class Exam(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), nullable=False)  # 시험 이름 (예: 2025-1 중간고사)
+    question_pdf_path = Column(String, nullable=True)  # 문제지 PDF 경로
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 
     
@@ -65,6 +66,7 @@ class Question(Base):
     exam = relationship("Exam", back_populates="questions")
     answers = relationship("Answer", back_populates="question", cascade="all, delete-orphan")
     question_pattern = relationship("QuestionPattern", back_populates="question", uselist=False, cascade="all, delete-orphan")
+    analysis_results = relationship("AnalysisResult", back_populates="question", cascade="all, delete-orphan")
 
 
 class AnswerSheet(Base):
@@ -73,6 +75,7 @@ class AnswerSheet(Base):
     id = Column(Integer, primary_key=True, index=True)
     exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=False)
     student_code = Column(String(100), nullable=False)  # 학번/학생 식별자 (로그인 계정 아님)
+    answer_pdf_path = Column(String, nullable=True)  # 답안지 PDF 경로
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     
@@ -91,6 +94,7 @@ class Answer(Base):
     
     # 학생이 실제로 작성한 서술형 답변
     answer_text = Column(Text, nullable=False)
+    raw_score = Column(Numeric(5, 2), nullable=True)  # LLM JSON에서 추출한 점수
     
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
@@ -133,4 +137,18 @@ class LLMAnalysis(Base):
     
     # 관계
     answer_sheet = relationship("AnswerSheet", back_populates="llm_analyses")
+
+
+class AnalysisResult(Base):
+    __tablename__ = "analysis_results"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    question_id = Column(Integer, ForeignKey("question.id", ondelete="CASCADE"), nullable=False)
+    analysis_text = Column(Text, nullable=False)  # LLM이 제공한 문항별 오답 분석 결과 텍스트
+    cluster_data = Column(JSON, nullable=True)  # 많이 등장한 답안 클러스터링 결과 (JSON)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+    
+    # 관계
+    question = relationship("Question", back_populates="analysis_results")
 
