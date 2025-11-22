@@ -1,3 +1,5 @@
+# backend/extract_answers.py 수정안
+
 import json
 
 # ========== 설정 ==========
@@ -5,7 +7,7 @@ import json
 PROBLEM_MAX_SCORES = {
     1: 40,  # 1번 문제: 40점 만점
     2: 30,  # 2번 문제: 30점 만점
-    3: 30   # 3번 문제: 30점 만점
+    3: 30,  # 3번 문제: 30점 만점
 }
 # ========================
 
@@ -22,39 +24,45 @@ print("문제별 만점이 아닌 학생 답안 추출")
 print("="*80)
 
 # 각 문제에 대해 처리
-for problem_num in [1, 2, 3]:
+for problem_num in [1, 2, 3]:  # 4번 문제 추가
     print(f"\n{'='*80}")
     print(f"문제 {problem_num}번 처리 중... (만점: {PROBLEM_MAX_SCORES[problem_num]}점)")
     print(f"{'='*80}")
     
     max_score = PROBLEM_MAX_SCORES[problem_num]
     
-    # 만점이 아닌 student_id들 필터링
+    # 만점이 아닌 student_code들 필터링
     non_perfect_students = []
     for student in scores_data:
-        student_id = student["student_id"]
-        score = student["scores"].get(str(problem_num), 0)
+        student_code = student["student_code"]  # student_id → student_code로 수정
+        
+        # answers 배열에서 해당 문제의 점수 찾기
+        score = 0
+        for answer in student.get("answers", []):
+            if answer.get("question_number") == problem_num:
+                score = answer.get("score", 0)
+                break
         
         if score != max_score:
             non_perfect_students.append({
-                "student_id": student_id,
+                "student_code": student_code,  # student_id → student_code로 수정
                 "score": score
             })
     
     print(f"만점이 아닌 학생 수: {len(non_perfect_students)}명")
     
-    # student_id를 키로 하는 딕셔너리로 변환 (빠른 검색을 위해)
-    non_perfect_ids = {item["student_id"] for item in non_perfect_students}
+    # student_code를 키로 하는 딕셔너리로 변환
+    non_perfect_codes = {item["student_code"] for item in non_perfect_students}
     
     # 결과 저장할 리스트
     extracted_answers = []
     
     for answer_entry in answers_data:
-        student_id = answer_entry.get("exam_id")  # Samples(answers).json에서는 exam_id가 학번
+        student_code = answer_entry.get("exam_id")  # exam_id가 학번
         
-        if student_id in non_perfect_ids:
+        if student_code in non_perfect_codes:
             # 해당 학생의 점수 찾기
-            score = next((s["score"] for s in non_perfect_students if s["student_id"] == student_id), None)
+            score = next((s["score"] for s in non_perfect_students if s["student_code"] == student_code), None)
             
             # 해당 문제 답안만 추출
             problem_data = None
@@ -65,7 +73,7 @@ for problem_num in [1, 2, 3]:
             
             if problem_data:
                 extracted_answers.append({
-                    "student_id": student_id,
+                    "student_code": student_code,  # student_id → student_code로 수정
                     "score": score,
                     f"problem_{problem_num}_answer": problem_data
                 })
@@ -99,5 +107,5 @@ for problem_num in [1, 2, 3]:
 print(f"\n{'='*80}")
 print(f"{'='*80}")
 print("\n생성된 파일:")
-for problem_num in [1, 2, 3]:
-    print(f"  - problem_{problem_num}_answers.json")
+for problem_num in [1, 2, 3]:  # 4번 문제 추가
+    print(f"  - problem{problem_num}_answers.json")

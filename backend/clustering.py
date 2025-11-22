@@ -64,7 +64,7 @@ def load_exams(json_path: str, problem_num: int):
     {
       "answers": [
         {
-          "student_id": "...",
+          "student_code": "...",  # 또는 "student_id" (하위 호환성)
           "problem_{n}_answer": { ... }
         },
         ...
@@ -83,12 +83,14 @@ def load_exams(json_path: str, problem_num: int):
     # {"answers": [...]} 형태
     if isinstance(data, dict) and "answers" in data:
         answers = data["answers"]
-        exam_ids = [ans["student_id"] for ans in answers]
+        # student_code를 우선적으로 사용, 없으면 student_id 사용 (하위 호환성)
+        exam_ids = [ans.get("student_code") or ans.get("student_id", "") for ans in answers]
         exams = []
         problem_key = f"problem_{problem_num}_answer"
         for ans in answers:
             exam = {
-                "exam_id": ans["student_id"],
+                # student_code를 우선적으로 사용, 없으면 student_id 사용 (하위 호환성)
+                "exam_id": ans.get("student_code") or ans.get("student_id", ""),
                 "problems": [ans[problem_key]],
             }
             exams.append(exam)
@@ -241,7 +243,7 @@ def describe_clusters_with_openai(
 
         # ⚠️ 요구사항: 답안 생성 로직 프롬프트(user_text)는 수정하지 않음
         user_text = f"""
-다음은 1번 문제에 대한 답안을 임베딩 유사도로 클러스터링한 결과 중,
+다음은 번 문제에 대한 답안을 임베딩 유사도로 클러스터링한 결과 중,
 클러스터 {idx}에 대한 정보입니다.
 
 [클러스터 {idx} 통계 JSON]
