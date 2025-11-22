@@ -138,3 +138,4 @@ def save_uploaded_image(file, user_id: int = None) -> dict:
         "height": original_height
     }
 
+

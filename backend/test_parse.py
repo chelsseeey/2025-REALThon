@@ -26,10 +26,26 @@ def encode_image(image_path: str) -> str:
     return f"data:{mime_type};base64,{b64}"
 
 
+def count_subquestions(text: str) -> int:
+    """
+    문제 텍스트에서 소문항 개수 세기.
+    - (1), (2), (3) 형식
+    - ①, ②, ③ 형식
+    하나도 없으면 1로 간주.
+    """
+    # (1), ( 2 ) 등
+    paren_nums = re.findall(r"\(\s*\d+\s*\)", text)
+    # ①~⑨
+    circled_nums = re.findall(r"[①②③④⑤⑥⑦⑧⑨]", text)
+
+    cnt = len(paren_nums) + len(circled_nums)
+    return cnt if cnt > 0 else 1
+
+
 def call_openai_for_problems(image_path: str) -> dict:
     """
-    모델에게는 '문제 텍스트 + 배점'만 뽑게 한다.
-    question_count는 계산하지 않음.
+    모델에게는 '문제 텍스트 + 배점'만 뽑게 하고,
+    question_count와 total_score를 계산하여 TestParseResult 형식으로 반환.
     """
     image_data_url = encode_image(image_path)
 
@@ -89,54 +105,40 @@ def call_openai_for_problems(image_path: str) -> dict:
     )
 
     content = resp.choices[0].message.content
-    return json.loads(content)
-
-
-def count_subquestions(text: str) -> int:
-    """
-    문제 텍스트에서 소문항 개수 세기.
-    - (1), (2), (3) 형식
-    - ①, ②, ③ 형식
-    하나도 없으면 1로 간주.
-    """
-    # (1), ( 2 ) 등
-    paren_nums = re.findall(r"\(\s*\d+\s*\)", text)
-    # ①~⑨
-    circled_nums = re.findall(r"[①②③④⑤⑥⑦⑧⑨]", text)
-
-    cnt = len(paren_nums) + len(circled_nums)
-    return cnt if cnt > 0 else 1
-
-
-def parse_exam(image_path: str, output_json_path: str | None = None) -> dict:
-    # 1단계: 문제/텍스트/배점만 모델에게서 받기
-    raw = call_openai_for_problems(image_path)
-
+    raw = json.loads(content)
+    
+    # question_count와 total_score 계산하여 TestParseResult 형식으로 변환
     problems_out = []
     total_score = 0
-
+    
     for p in raw.get("problems", []):
         idx = p.get("problem_index")
         text = p.get("raw_text", "")
         score = int(p.get("score", 0))
-
+        
         q_count = count_subquestions(text)
         total_score += score
-
-        # 🔽 여기에서 raw_text도 같이 저장
-        problems_out.append(
-            {
-                "problem_index": idx,
-                "question_count": q_count,
-                "score": score,
-                "raw_text": text,  # <- 문제 내용 저장
-            }
-        )
-
-    result = {
+        
+        problems_out.append({
+            "problem_index": idx,
+            "question_count": q_count,
+            "score": score,
+            "raw_text": text,
+        })
+    
+    return {
         "problems": problems_out,
         "total_score": total_score,
     }
+
+
+def parse_exam(image_path: str, output_json_path: str | None = None) -> dict:
+    """
+    문제지 이미지를 파싱하여 TestParseResult 형식으로 반환.
+    call_openai_for_problems가 이미 question_count와 total_score를 계산하므로
+    그 결과를 그대로 반환합니다.
+    """
+    result = call_openai_for_problems(image_path)
 
     if output_json_path:
         with open(output_json_path, "w", encoding="utf-8") as f:

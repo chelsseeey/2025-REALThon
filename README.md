@@ -6,8 +6,6 @@
 
 - **Backend**: FastAPI (Python)
 - **Database**: PostgreSQL
-- **Container**: Docker & Docker Compose
-- **Authentication**: JWT (JSON Web Token)
 
 ## 프로젝트 구조
 
@@ -18,11 +16,17 @@
 │   ├── models.py        # SQLAlchemy 데이터베이스 모델
 │   ├── schemas.py       # Pydantic 스키마
 │   ├── database.py      # 데이터베이스 연결 설정
-│   ├── auth.py          # 인증 관련 유틸리티
 │   ├── config.py        # 설정 관리
+│   ├── dependencies.py # 공통 의존성
 │   ├── requirements.txt # Python 의존성
-│   └── Dockerfile       # 백엔드 Docker 이미지
-├── docker-compose.yml   # Docker Compose 설정
+│   ├── routers/         # API 라우터
+│   │   ├── exams.py           # 시험 관리
+│   │   ├── question_papers.py # 문제지 관리
+│   │   ├── answer_sheets.py   # 답안지 관리
+│   │   └── analysis.py        # 오답 분석
+│   ├── score.py         # 답안지 점수 파싱 스크립트
+│   ├── parse2.py        # 답안지 파싱 스크립트
+│   └── test_parse.py    # 문제지 파싱 테스트 스크립트
 └── README.md
 ```
 
@@ -30,74 +34,106 @@
 
 ### 사전 요구사항
 
-- Docker
-- Docker Compose
+- Python 3.11 이상
+- PostgreSQL 15 이상
 
 ### 설치 및 실행
 
-1. 프로젝트 클론 또는 다운로드
+1. **PostgreSQL 데이터베이스 설정**
 
-2. Docker Compose로 서비스 시작:
 ```bash
-docker-compose up -d
+# PostgreSQL 접속
+psql -U postgres
+
+# 데이터베이스 생성
+CREATE DATABASE realthon_db;
+
+# 사용자 생성
+CREATE USER realthon WITH PASSWORD 'realthon123';
+
+# 권한 부여
+GRANT ALL PRIVILEGES ON DATABASE realthon_db TO realthon;
+\c realthon_db
+GRANT ALL ON SCHEMA public TO realthon;
 ```
 
-3. 서비스 확인:
-   - 백엔드 API: http://localhost:8000
-   - API 문서: http://localhost:8000/docs
-   - 대체 문서: http://localhost:8000/redoc
+2. **프로젝트 설정**
 
-4. 서비스 중지:
 ```bash
-docker-compose down
+cd backend
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
 ```
 
-5. 볼륨까지 삭제 (데이터베이스 데이터 포함):
+3. **의존성 설치**
+
 ```bash
-docker-compose down -v
+pip install -r requirements.txt
 ```
+
+4. **환경 변수 설정**
+
+프로젝트 루트에 `.env` 파일 생성:
+
+# >>> exit()으로 인터프리터에서 나옵니다.
+(venv) $ export DATABASE_URL="postgresql+psycopg://realthon:realthon123@localhost:5432/realthon_db"
+
+# 이후 테이블 생성 코드 재실행
+(venv) $ venv/Scripts/python.exe
+
+6. **서버 실행**
+
+```bash
+cd backend
+venv/Scripts/python.exe -m uvicorn main:app --reload
+```
+
+7. **서비스 확인**
+
+- 백엔드 API: http://localhost:8000
+- API 문서: http://localhost:8000/docs
+- 대체 문서: http://localhost:8000/redoc
 
 ## API 엔드포인트
 
-### 인증
+### 시험 관리 (`/exams`)
 
-- `POST /register` - 회원가입
-  - Request Body:
-    ```json
-    {
-      "email": "user@example.com",
-      "username": "사용자명",
-      "password": "비밀번호"
-    }
-    ```
+- `GET /exams` - 시험 목록 조회
+- `GET /exams/current` - 현재 시험 조회 (시험이 하나만 있다고 가정)
+- `POST /exams/llm-analysis` - 시험 LLM 분석 텍스트 업데이트
 
-- `POST /token` - 로그인 (토큰 발급)
-  - Form Data:
-    - `username`: 이메일
-    - `password`: 비밀번호
-  - Response:
-    ```json
-    {
-      "access_token": "jwt_token_here",
-      "token_type": "bearer"
-    }
-    ```
+### 문제지 관리 (`/question-papers`)
 
-- `GET /users/me` - 현재 사용자 정보 조회
-  - Headers: `Authorization: Bearer {token}`
+- `POST /question-papers/upload` - 문제지 LLM 추출 결과 저장
+  - `extraction_result_json`: test_parse.py의 결과 JSON
+- `POST /question-papers/answer-key` - 정답표 저장
+  - `answer_key_json`: 정답표 JSON
+
+### 답안지 관리 (`/answer-sheets`)
+
+- `POST /answer-sheets/upload` - 답안지 LLM 추출 결과 저장
+  - `extraction_results_json`: LLM 추출 결과들 (JSON 배열 문자열)
+
+### 오답 분석 (`/analysis`)
+
+- `POST /analysis/exams/{question_id}/analyze` - 문항별 오답 분석 실행
+  - `question_id`: 문항 ID
+  - `analysis_text`: LLM 분석 결과 텍스트
+  - `cluster_data_json`: 클러스터링 결과 (선택사항)
+- `GET /analysis/questions/{question_id}/report` - 문항별 분석 리포트 조회
 
 ## 환경 변수
 
-`docker-compose.yml`에서 다음 환경 변수를 설정할 수 있습니다:
+`.env` 파일에서 다음 환경 변수를 설정할 수 있습니다:
 
-- `DATABASE_URL`: PostgreSQL 연결 URL
-- `SECRET_KEY`: JWT 토큰 서명에 사용할 비밀키 (프로덕션에서는 반드시 변경)
-- `ALGORITHM`: JWT 알고리즘 (기본값: HS256)
-- `ACCESS_TOKEN_EXPIRE_MINUTES`: 토큰 만료 시간 (기본값: 30분)
+- `DATABASE_URL`: PostgreSQL 연결 URL (필수)
 
 ## 데이터베이스
-
-PostgreSQL 데이터베이스는 Docker 컨테이너로 실행되며, 데이터는 `postgres_data` 볼륨에 저장됩니다.
 
 기본 설정:
 - 사용자: `realthon`
@@ -105,54 +141,17 @@ PostgreSQL 데이터베이스는 Docker 컨테이너로 실행되며, 데이터�
 - 데이터베이스: `realthon_db`
 - 포트: `5432`
 
-## 개발
+## 스크립트
 
-### 로컬 개발 환경 설정
+### `score.py`
+답안지 이미지(PNG)에서 학번과 점수를 추출하여 DB에 저장하는 스크립트
 
-1. Python 3.11 이상 설치
-2. 가상 환경 생성 및 활성화:
 ```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+python score.py
 ```
 
-3. 의존성 설치:
-```bash
-pip install -r requirements.txt
-```
+### `parse2.py`
+답안지 이미지를 LLM으로 파싱하여 JSON 결과를 반환하는 스크립트
 
-4. 환경 변수 설정 (선택사항):
-```bash
-export DATABASE_URL="postgresql://realthon:realthon123@localhost:5432/realthon_db"
-export SECRET_KEY="your-secret-key"
-```
-
-5. 서버 실행:
-```bash
-uvicorn main:app --reload
-```
-
-## GCP VM 배포
-
-GCP Compute Engine VM에서 앱과 데이터베이스를 실행하는 방법은 [GCP_DEPLOY.md](./GCP_DEPLOY.md)를 참조하세요.
-
-### 빠른 시작
-
-1. GCP VM 인스턴스 생성
-2. 프로젝트 파일 업로드
-3. 설정 스크립트 실행:
-```bash
-chmod +x setup.sh deploy.sh
-./setup.sh
-./deploy.sh
-```
-
-자세한 내용은 [GCP_DEPLOY.md](./GCP_DEPLOY.md)를 확인하세요.
-
-## 다음 단계
-
-- [ ] 답안지 업로드 기능
-- [ ] 채점 결과 업로드 기능
-- [ ] LLM 분석 API 통합
-- [ ] 분석 결과 저장 및 조회
+### `test_parse.py`
+문제지 이미지를 LLM으로 파싱하여 문제 정보를 추출하는 스크립트

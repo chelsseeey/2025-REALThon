@@ -34,7 +34,7 @@ system_prompt = """
     {
       "question_number": integer,
       "answer_text": string,
-      "score": integer | null
+      "score": integer
     }
   ]
 }
@@ -56,11 +56,21 @@ system_prompt = """
     - 답안이 비어있으면 빈 문자열("")로 넣으세요.
   - score:
     - 이미지에 점수가 표시되어 있으면 정수형 숫자로 넣으세요.
-    - 점수가 보이지 않으면 null로 넣으세요.
+    - 점수가 보이지 않으면 0으로 넣으세요.
 
 중요:
 - 손글씨 답안을 최대한 그대로 옮기는 것이 목적입니다. 새로운 설명을 덧붙이거나 의미를 요약하지 마세요.
 - JSON 이외의 어떤 텍스트도 출력하지 마세요.
+- 반환 형식은 반드시 위 스키마와 정확히 일치해야 합니다.
+- 예시 형식:
+{
+  "student_code": "2271100",
+  "answers": [
+    { "question_number": 1, "answer_text": "", "score": 14 },
+    { "question_number": 2, "answer_text": "", "score": 26 },
+    { "question_number": 3, "answer_text": "", "score": 16 }
+  ]
+}
 """
 
 response = client.chat.completions.create(

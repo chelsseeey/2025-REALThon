@@ -19,7 +19,7 @@ async def analyze_wrong_answers(
     db: Session = Depends(get_db)
 ):
     """
-    문항별 전체 학생 answer중 max_score아닌 answer 분석 실행 (LLM 분석 결과 텍스트 저장) (인증 없음)
+    문항별 전체 학생 answer중 raw_score가 question.score(배점)보다 낮은 answer 분석 실행 (LLM 분석 결과 텍스트 저장) (인증 없음)
     
     - question_id: 문항 ID
     - analysis_text: LLM이 제공한 문항별 오답 분석 결과 텍스트

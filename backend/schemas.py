@@ -72,7 +72,6 @@ class AnswerSheetResponse(AnswerSheetBase):
 class AnswerBase(BaseModel):
     answer_text: str
     raw_score: Optional[Decimal] = None  # LLM JSON에서 추출한 점수
-    max_score: Optional[Decimal] = None  # 최대 점수
 
 class AnswerCreate(AnswerBase):
     answer_sheet_id: int

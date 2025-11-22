@@ -1,802 +1,802 @@
 [
   {
-    "student_id": "2271001",
-    "scores": {
-      "1": 3,
-      "2": 8,
-      "3": 2
-    }
-  },
-  {
-    "student_id": "2271002",
-    "scores": {
-      "1": 26,
-      "2": 8,
-      "3": 3
-    }
-  },
-  {
-    "student_id": "2271003",
-    "scores": {
-      "1": 2,
-      "2": 12,
-      "3": 17
-    }
-  },
-  {
-    "student_id": "2271004",
-    "scores": {
-      "1": 35,
-      "2": 10,
-      "3": 10
-    }
-  },
-  {
-    "student_id": "2271005",
-    "scores": {
-      "1": 3,
-      "2": 5,
-      "3": 4
-    }
-  },
-  {
-    "student_id": "2271006",
-    "scores": {
-      "1": 21,
-      "2": 17,
-      "3": 10
-    }
-  },
-  {
-    "student_id": "2271007",
-    "scores": {
-      "1": 15,
-      "2": 5,
-      "3": 0
-    }
-  },
-  {
-    "student_id": "2271008",
-    "scores": {
-      "1": 27,
-      "2": 24,
-      "3": 2
-    }
-  },
-  {
-    "student_id": "2271009",
-    "scores": {
-      "1": 38,
-      "2": 12,
-      "3": 2
-    }
-  },
-  {
-    "student_id": "2271010",
-    "scores": {
-      "1": 0,
-      "2": 10,
-      "3": 23
-    }
-  },
-  {
-    "student_id": "2271011",
-    "scores": {
-      "1": 28,
-      "2": 3,
-      "3": 28
-    }
-  },
-  {
-    "student_id": "2271012",
-    "scores": {
-      "1": 2,
-      "2": 2,
-      "3": 21
-    }
-  },
-  {
-    "student_id": "2271013",
-    "scores": {
-      "1": 9,
-      "2": 4,
-      "3": 25
-    }
+    "student_code": "2271001",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 3 },
+      { "question_number": 2, "answer_text": "", "score": 8 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
+  },
+  {
+    "student_code": "2271002",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 26 },
+      { "question_number": 2, "answer_text": "", "score": 8 },
+      { "question_number": 3, "answer_text": "", "score": 3 }
+    ]
+  },
+  {
+    "student_code": "2271003",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 2 },
+      { "question_number": 2, "answer_text": "", "score": 12 },
+      { "question_number": 3, "answer_text": "", "score": 17 }
+    ]
+  },
+  {
+    "student_code": "2271004",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 35 },
+      { "question_number": 2, "answer_text": "", "score": 10 },
+      { "question_number": 3, "answer_text": "", "score": 10 }
+    ]
+  },
+  {
+    "student_code": "2271005",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 3 },
+      { "question_number": 2, "answer_text": "", "score": 5 },
+      { "question_number": 3, "answer_text": "", "score": 4 }
+    ]
+  },
+  {
+    "student_code": "2271006",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 17 },
+      { "question_number": 3, "answer_text": "", "score": 10 }
+    ]
+  },
+  {
+    "student_code": "2271007",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 15 },
+      { "question_number": 2, "answer_text": "", "score": 5 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
+  },
+  {
+    "student_code": "2271008",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 27 },
+      { "question_number": 2, "answer_text": "", "score": 24 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
+  },
+  {
+    "student_code": "2271009",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 38 },
+      { "question_number": 2, "answer_text": "", "score": 12 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
+  },
+  {
+    "student_code": "2271010",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 0 },
+      { "question_number": 2, "answer_text": "", "score": 10 },
+      { "question_number": 3, "answer_text": "", "score": 23 }
+    ]
+  },
+  {
+    "student_code": "2271011",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 28 },
+      { "question_number": 2, "answer_text": "", "score": 3 },
+      { "question_number": 3, "answer_text": "", "score": 28 }
+    ]
+  },
+  {
+    "student_code": "2271012",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 2 },
+      { "question_number": 2, "answer_text": "", "score": 2 },
+      { "question_number": 3, "answer_text": "", "score": 21 }
+    ]
+  },
+  {
+    "student_code": "2271013",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 9 },
+      { "question_number": 2, "answer_text": "", "score": 4 },
+      { "question_number": 3, "answer_text": "", "score": 25 }
+    ]
   },
   {
-    "student_id": "2271014",
-    "scores": {
-      "1": 1,
-      "2": 9,
-      "3": 29
-    }
+    "student_code": "2271014",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 1 },
+      { "question_number": 2, "answer_text": "", "score": 9 },
+      { "question_number": 3, "answer_text": "", "score": 29 }
+    ]
   },
   {
-    "student_id": "2271015",
-    "scores": {
-      "1": 27,
-      "2": 18,
-      "3": 15
-    }
+    "student_code": "2271015",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 27 },
+      { "question_number": 2, "answer_text": "", "score": 18 },
+      { "question_number": 3, "answer_text": "", "score": 15 }
+    ]
   },
   {
-    "student_id": "2271016",
-    "scores": {
-      "1": 16,
-      "2": 15,
-      "3": 26
-    }
+    "student_code": "2271016",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 16 },
+      { "question_number": 2, "answer_text": "", "score": 15 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
   },
   {
-    "student_id": "2271017",
-    "scores": {
-      "1": 2,
-      "2": 24,
-      "3": 9
-    }
+    "student_code": "2271017",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 2 },
+      { "question_number": 2, "answer_text": "", "score": 24 },
+      { "question_number": 3, "answer_text": "", "score": 9 }
+    ]
   },
   {
-    "student_id": "2271018",
-    "scores": {
-      "1": 21,
-      "2": 16,
-      "3": 25
-    }
+    "student_code": "2271018",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 16 },
+      { "question_number": 3, "answer_text": "", "score": 25 }
+    ]
   },
   {
-    "student_id": "2271019",
-    "scores": {
-      "1": 30,
-      "2": 6,
-      "3": 26
-    }
+    "student_code": "2271019",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 30 },
+      { "question_number": 2, "answer_text": "", "score": 6 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
   },
   {
-    "student_id": "2271020",
-    "scores": {
-      "1": 38,
-      "2": 20,
-      "3": 16
-    }
+    "student_code": "2271020",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 38 },
+      { "question_number": 2, "answer_text": "", "score": 20 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   },
   {
-    "student_id": "2271021",
-    "scores": {
-      "1": 36,
-      "2": 25,
-      "3": 30
-    }
+    "student_code": "2271021",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 36 },
+      { "question_number": 2, "answer_text": "", "score": 25 },
+      { "question_number": 3, "answer_text": "", "score": 30 }
+    ]
   },
   {
-    "student_id": "2271022",
-    "scores": {
-      "1": 20,
-      "2": 0,
-      "3": 12
-    }
+    "student_code": "2271022",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 20 },
+      { "question_number": 2, "answer_text": "", "score": 0 },
+      { "question_number": 3, "answer_text": "", "score": 12 }
+    ]
   },
   {
-    "student_id": "2271023",
-    "scores": {
-      "1": 32,
-      "2": 13,
-      "3": 21
-    }
+    "student_code": "2271023",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 32 },
+      { "question_number": 2, "answer_text": "", "score": 13 },
+      { "question_number": 3, "answer_text": "", "score": 21 }
+    ]
   },
   {
-    "student_id": "2271024",
-    "scores": {
-      "1": 34,
-      "2": 20,
-      "3": 25
-    }
+    "student_code": "2271024",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 34 },
+      { "question_number": 2, "answer_text": "", "score": 20 },
+      { "question_number": 3, "answer_text": "", "score": 25 }
+    ]
   },
   {
-    "student_id": "2271025",
-    "scores": {
-      "1": 38,
-      "2": 28,
-      "3": 26
-    }
+    "student_code": "2271025",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 38 },
+      { "question_number": 2, "answer_text": "", "score": 28 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
   },
   {
-    "student_id": "2271026",
-    "scores": {
-      "1": 31,
-      "2": 16,
-      "3": 21
-    }
+    "student_code": "2271026",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 31 },
+      { "question_number": 2, "answer_text": "", "score": 16 },
+      { "question_number": 3, "answer_text": "", "score": 21 }
+    ]
   },
   {
-    "student_id": "2271027",
-    "scores": {
-      "1": 26,
-      "2": 11,
-      "3": 16
-    }
+    "student_code": "2271027",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 26 },
+      { "question_number": 2, "answer_text": "", "score": 11 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   },
   {
-    "student_id": "2271028",
-    "scores": {
-      "1": 2,
-      "2": 27,
-      "3": 24
-    }
+    "student_code": "2271028",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 2 },
+      { "question_number": 2, "answer_text": "", "score": 27 },
+      { "question_number": 3, "answer_text": "", "score": 24 }
+    ]
   },
   {
-    "student_id": "2271029",
-    "scores": {
-      "1": 11,
-      "2": 23,
-      "3": 26
-    }
+    "student_code": "2271029",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 11 },
+      { "question_number": 2, "answer_text": "", "score": 23 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
   },
   {
-    "student_id": "2271030",
-    "scores": {
-      "1": 5,
-      "2": 29,
-      "3": 15
-    }
+    "student_code": "2271030",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 5 },
+      { "question_number": 2, "answer_text": "", "score": 29 },
+      { "question_number": 3, "answer_text": "", "score": 15 }
+    ]
   },
   {
-    "student_id": "2271031",
-    "scores": {
-      "1": 16,
-      "2": 5,
-      "3": 10
-    }
+    "student_code": "2271031",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 16 },
+      { "question_number": 2, "answer_text": "", "score": 5 },
+      { "question_number": 3, "answer_text": "", "score": 10 }
+    ]
   },
   {
-    "student_id": "2271032",
-    "scores": {
-      "1": 21,
-      "2": 17,
-      "3": 12
-    }
+    "student_code": "2271032",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 17 },
+      { "question_number": 3, "answer_text": "", "score": 12 }
+    ]
   },
   {
-    "student_id": "2271033",
-    "scores": {
-      "1": 4,
-      "2": 23,
-      "3": 14
-    }
+    "student_code": "2271033",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 4 },
+      { "question_number": 2, "answer_text": "", "score": 23 },
+      { "question_number": 3, "answer_text": "", "score": 14 }
+    ]
   },
   {
-    "student_id": "2271034",
-    "scores": {
-      "1": 24,
-      "2": 18,
-      "3": 24
-    }
+    "student_code": "2271034",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 24 },
+      { "question_number": 2, "answer_text": "", "score": 18 },
+      { "question_number": 3, "answer_text": "", "score": 24 }
+    ]
   },
   {
-    "student_id": "2271035",
-    "scores": {
-      "1": 21,
-      "2": 0,
-      "3": 6
-    }
+    "student_code": "2271035",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 0 },
+      { "question_number": 3, "answer_text": "", "score": 6 }
+    ]
   },
   {
-    "student_id": "2271036",
-    "scores": {
-      "1": 37,
-      "2": 2,
-      "3": 26
-    }
+    "student_code": "2271036",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 37 },
+      { "question_number": 2, "answer_text": "", "score": 2 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
   },
   {
-    "student_id": "2271037",
-    "scores": {
-      "1": 40,
-      "2": 11,
-      "3": 0
-    }
+    "student_code": "2271037",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 40 },
+      { "question_number": 2, "answer_text": "", "score": 11 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
   },
   {
-    "student_id": "2271038",
-    "scores": {
-      "1": 22,
-      "2": 7,
-      "3": 12
-    }
+    "student_code": "2271038",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 22 },
+      { "question_number": 2, "answer_text": "", "score": 7 },
+      { "question_number": 3, "answer_text": "", "score": 12 }
+    ]
   },
   {
-    "student_id": "2271039",
-    "scores": {
-      "1": 34,
-      "2": 16,
-      "3": 23
-    }
+    "student_code": "2271039",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 34 },
+      { "question_number": 2, "answer_text": "", "score": 16 },
+      { "question_number": 3, "answer_text": "", "score": 23 }
+    ]
   },
   {
-    "student_id": "2271040",
-    "scores": {
-      "1": 3,
-      "2": 20,
-      "3": 9
-    }
+    "student_code": "2271040",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 3 },
+      { "question_number": 2, "answer_text": "", "score": 20 },
+      { "question_number": 3, "answer_text": "", "score": 9 }
+    ]
   },
   {
-    "student_id": "2271041",
-    "scores": {
-      "1": 31,
-      "2": 30,
-      "3": 24
-    }
+    "student_code": "2271041",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 31 },
+      { "question_number": 2, "answer_text": "", "score": 30 },
+      { "question_number": 3, "answer_text": "", "score": 24 }
+    ]
   },
   {
-    "student_id": "2271042",
-    "scores": {
-      "1": 40,
-      "2": 23,
-      "3": 7
-    }
+    "student_code": "2271042",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 40 },
+      { "question_number": 2, "answer_text": "", "score": 23 },
+      { "question_number": 3, "answer_text": "", "score": 7 }
+    ]
   },
   {
-    "student_id": "2271043",
-    "scores": {
-      "1": 34,
-      "2": 15,
-      "3": 5
-    }
+    "student_code": "2271043",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 34 },
+      { "question_number": 2, "answer_text": "", "score": 15 },
+      { "question_number": 3, "answer_text": "", "score": 5 }
+    ]
   },
   {
-    "student_id": "2271044",
-    "scores": {
-      "1": 9,
-      "2": 17,
-      "3": 14
-    }
+    "student_code": "2271044",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 9 },
+      { "question_number": 2, "answer_text": "", "score": 17 },
+      { "question_number": 3, "answer_text": "", "score": 14 }
+    ]
   },
   {
-    "student_id": "2271045",
-    "scores": {
-      "1": 24,
-      "2": 24,
-      "3": 14
-    }
+    "student_code": "2271045",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 24 },
+      { "question_number": 2, "answer_text": "", "score": 24 },
+      { "question_number": 3, "answer_text": "", "score": 14 }
+    ]
   },
   {
-    "student_id": "2271046",
-    "scores": {
-      "1": 2,
-      "2": 0,
-      "3": 4
-    }
+    "student_code": "2271046",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 2 },
+      { "question_number": 2, "answer_text": "", "score": 0 },
+      { "question_number": 3, "answer_text": "", "score": 4 }
+    ]
   },
   {
-    "student_id": "2271047",
-    "scores": {
-      "1": 29,
-      "2": 6,
-      "3": 0
-    }
+    "student_code": "2271047",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 29 },
+      { "question_number": 2, "answer_text": "", "score": 6 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
   },
   {
-    "student_id": "2271048",
-    "scores": {
-      "1": 16,
-      "2": 25,
-      "3": 11
-    }
+    "student_code": "2271048",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 16 },
+      { "question_number": 2, "answer_text": "", "score": 25 },
+      { "question_number": 3, "answer_text": "", "score": 11 }
+    ]
   },
   {
-    "student_id": "2271049",
-    "scores": {
-      "1": 17,
-      "2": 30,
-      "3": 13
-    }
+    "student_code": "2271049",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 17 },
+      { "question_number": 2, "answer_text": "", "score": 30 },
+      { "question_number": 3, "answer_text": "", "score": 13 }
+    ]
   },
   {
-    "student_id": "2271050",
-    "scores": {
-      "1": 40,
-      "2": 13,
-      "3": 0
-    }
+    "student_code": "2271050",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 40 },
+      { "question_number": 2, "answer_text": "", "score": 13 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
   },
   {
-    "student_id": "2271051",
-    "scores": {
-      "1": 6,
-      "2": 19,
-      "3": 2
-    }
+    "student_code": "2271051",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 6 },
+      { "question_number": 2, "answer_text": "", "score": 19 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
   },
   {
-    "student_id": "2271052",
-    "scores": {
-      "1": 32,
-      "2": 11,
-      "3": 22
-    }
+    "student_code": "2271052",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 32 },
+      { "question_number": 2, "answer_text": "", "score": 11 },
+      { "question_number": 3, "answer_text": "", "score": 22 }
+    ]
   },
   {
-    "student_id": "2271053",
-    "scores": {
-      "1": 5,
-      "2": 2,
-      "3": 13
-    }
+    "student_code": "2271053",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 5 },
+      { "question_number": 2, "answer_text": "", "score": 2 },
+      { "question_number": 3, "answer_text": "", "score": 13 }
+    ]
   },
   {
-    "student_id": "2271054",
-    "scores": {
-      "1": 0,
-      "2": 25,
-      "3": 17
-    }
+    "student_code": "2271054",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 0 },
+      { "question_number": 2, "answer_text": "", "score": 25 },
+      { "question_number": 3, "answer_text": "", "score": 17 }
+    ]
   },
   {
-    "student_id": "2271055",
-    "scores": {
-      "1": 24,
-      "2": 2,
-      "3": 17
-    }
+    "student_code": "2271055",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 24 },
+      { "question_number": 2, "answer_text": "", "score": 2 },
+      { "question_number": 3, "answer_text": "", "score": 17 }
+    ]
   },
   {
-    "student_id": "2271056",
-    "scores": {
-      "1": 40,
-      "2": 12,
-      "3": 0
-    }
+    "student_code": "2271056",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 40 },
+      { "question_number": 2, "answer_text": "", "score": 12 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
   },
   {
-    "student_id": "2271057",
-    "scores": {
-      "1": 20,
-      "2": 8,
-      "3": 30
-    }
+    "student_code": "2271057",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 20 },
+      { "question_number": 2, "answer_text": "", "score": 8 },
+      { "question_number": 3, "answer_text": "", "score": 30 }
+    ]
   },
   {
-    "student_id": "2271058",
-    "scores": {
-      "1": 30,
-      "2": 1,
-      "3": 24
-    }
+    "student_code": "2271058",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 30 },
+      { "question_number": 2, "answer_text": "", "score": 1 },
+      { "question_number": 3, "answer_text": "", "score": 24 }
+    ]
   },
   {
-    "student_id": "2271059",
-    "scores": {
-      "1": 35,
-      "2": 10,
-      "3": 13
-    }
+    "student_code": "2271059",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 35 },
+      { "question_number": 2, "answer_text": "", "score": 10 },
+      { "question_number": 3, "answer_text": "", "score": 13 }
+    ]
   },
   {
-    "student_id": "2271060",
-    "scores": {
-      "1": 22,
-      "2": 0,
-      "3": 20
-    }
+    "student_code": "2271060",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 22 },
+      { "question_number": 2, "answer_text": "", "score": 0 },
+      { "question_number": 3, "answer_text": "", "score": 20 }
+    ]
   },
   {
-    "student_id": "2271061",
-    "scores": {
-      "1": 40,
-      "2": 5,
-      "3": 28
-    }
+    "student_code": "2271061",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 40 },
+      { "question_number": 2, "answer_text": "", "score": 5 },
+      { "question_number": 3, "answer_text": "", "score": 28 }
+    ]
   },
   {
-    "student_id": "2271062",
-    "scores": {
-      "1": 26,
-      "2": 2,
-      "3": 22
-    }
+    "student_code": "2271062",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 26 },
+      { "question_number": 2, "answer_text": "", "score": 2 },
+      { "question_number": 3, "answer_text": "", "score": 22 }
+    ]
   },
   {
-    "student_id": "2271063",
-    "scores": {
-      "1": 9,
-      "2": 11,
-      "3": 21
-    }
+    "student_code": "2271063",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 9 },
+      { "question_number": 2, "answer_text": "", "score": 11 },
+      { "question_number": 3, "answer_text": "", "score": 21 }
+    ]
   },
   {
-    "student_id": "2271064",
-    "scores": {
-      "1": 15,
-      "2": 23,
-      "3": 2
-    }
+    "student_code": "2271064",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 15 },
+      { "question_number": 2, "answer_text": "", "score": 23 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
   },
   {
-    "student_id": "2271065",
-    "scores": {
-      "1": 40,
-      "2": 1,
-      "3": 24
-    }
+    "student_code": "2271065",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 40 },
+      { "question_number": 2, "answer_text": "", "score": 1 },
+      { "question_number": 3, "answer_text": "", "score": 24 }
+    ]
   },
   {
-    "student_id": "2271066",
-    "scores": {
-      "1": 33,
-      "2": 12,
-      "3": 17
-    }
+    "student_code": "2271066",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 33 },
+      { "question_number": 2, "answer_text": "", "score": 12 },
+      { "question_number": 3, "answer_text": "", "score": 17 }
+    ]
   },
   {
-    "student_id": "2271067",
-    "scores": {
-      "1": 19,
-      "2": 4,
-      "3": 29
-    }
+    "student_code": "2271067",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 19 },
+      { "question_number": 2, "answer_text": "", "score": 4 },
+      { "question_number": 3, "answer_text": "", "score": 29 }
+    ]
   },
   {
-    "student_id": "2271068",
-    "scores": {
-      "1": 18,
-      "2": 24,
-      "3": 26
-    }
+    "student_code": "2271068",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 18 },
+      { "question_number": 2, "answer_text": "", "score": 24 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
   },
   {
-    "student_id": "2271069",
-    "scores": {
-      "1": 24,
-      "2": 11,
-      "3": 4
-    }
+    "student_code": "2271069",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 24 },
+      { "question_number": 2, "answer_text": "", "score": 11 },
+      { "question_number": 3, "answer_text": "", "score": 4 }
+    ]
   },
   {
-    "student_id": "2271070",
-    "scores": {
-      "1": 34,
-      "2": 10,
-      "3": 16
-    }
+    "student_code": "2271070",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 34 },
+      { "question_number": 2, "answer_text": "", "score": 10 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   },
   {
-    "student_id": "2271071",
-    "scores": {
-      "1": 7,
-      "2": 20,
-      "3": 5
-    }
+    "student_code": "2271071",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 7 },
+      { "question_number": 2, "answer_text": "", "score": 20 },
+      { "question_number": 3, "answer_text": "", "score": 5 }
+    ]
   },
   {
-    "student_id": "2271072",
-    "scores": {
-      "1": 37,
-      "2": 12,
-      "3": 13
-    }
+    "student_code": "2271072",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 37 },
+      { "question_number": 2, "answer_text": "", "score": 12 },
+      { "question_number": 3, "answer_text": "", "score": 13 }
+    ]
   },
   {
-    "student_id": "2271073",
-    "scores": {
-      "1": 3,
-      "2": 23,
-      "3": 4
-    }
+    "student_code": "2271073",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 3 },
+      { "question_number": 2, "answer_text": "", "score": 23 },
+      { "question_number": 3, "answer_text": "", "score": 4 }
+    ]
   },
   {
-    "student_id": "2271074",
-    "scores": {
-      "1": 29,
-      "2": 21,
-      "3": 0
-    }
+    "student_code": "2271074",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 29 },
+      { "question_number": 2, "answer_text": "", "score": 21 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
   },
   {
-    "student_id": "2271075",
-    "scores": {
-      "1": 22,
-      "2": 14,
-      "3": 27
-    }
+    "student_code": "2271075",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 22 },
+      { "question_number": 2, "answer_text": "", "score": 14 },
+      { "question_number": 3, "answer_text": "", "score": 27 }
+    ]
   },
   {
-    "student_id": "2271076",
-    "scores": {
-      "1": 28,
-      "2": 9,
-      "3": 13
-    }
+    "student_code": "2271076",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 28 },
+      { "question_number": 2, "answer_text": "", "score": 9 },
+      { "question_number": 3, "answer_text": "", "score": 13 }
+    ]
   },
   {
-    "student_id": "2271077",
-    "scores": {
-      "1": 1,
-      "2": 5,
-      "3": 16
-    }
+    "student_code": "2271077",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 1 },
+      { "question_number": 2, "answer_text": "", "score": 5 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   },
   {
-    "student_id": "2271078",
-    "scores": {
-      "1": 20,
-      "2": 27,
-      "3": 16
-    }
+    "student_code": "2271078",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 20 },
+      { "question_number": 2, "answer_text": "", "score": 27 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   },
   {
-    "student_id": "2271079",
-    "scores": {
-      "1": 32,
-      "2": 17,
-      "3": 4
-    }
+    "student_code": "2271079",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 32 },
+      { "question_number": 2, "answer_text": "", "score": 17 },
+      { "question_number": 3, "answer_text": "", "score": 4 }
+    ]
   },
   {
-    "student_id": "2271080",
-    "scores": {
-      "1": 21,
-      "2": 16,
-      "3": 3
-    }
+    "student_code": "2271080",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 16 },
+      { "question_number": 3, "answer_text": "", "score": 3 }
+    ]
   },
   {
-    "student_id": "2271081",
-    "scores": {
-      "1": 34,
-      "2": 23,
-      "3": 11
-    }
+    "student_code": "2271081",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 34 },
+      { "question_number": 2, "answer_text": "", "score": 23 },
+      { "question_number": 3, "answer_text": "", "score": 11 }
+    ]
   },
   {
-    "student_id": "2271082",
-    "scores": {
-      "1": 14,
-      "2": 28,
-      "3": 18
-    }
+    "student_code": "2271082",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 14 },
+      { "question_number": 2, "answer_text": "", "score": 28 },
+      { "question_number": 3, "answer_text": "", "score": 18 }
+    ]
   },
   {
-    "student_id": "2271083",
-    "scores": {
-      "1": 21,
-      "2": 2,
-      "3": 8
-    }
+    "student_code": "2271083",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 2 },
+      { "question_number": 3, "answer_text": "", "score": 8 }
+    ]
   },
   {
-    "student_id": "2271084",
-    "scores": {
-      "1": 32,
-      "2": 7,
-      "3": 6
-    }
+    "student_code": "2271084",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 32 },
+      { "question_number": 2, "answer_text": "", "score": 7 },
+      { "question_number": 3, "answer_text": "", "score": 6 }
+    ]
   },
   {
-    "student_id": "2271085",
-    "scores": {
-      "1": 20,
-      "2": 8,
-      "3": 12
-    }
+    "student_code": "2271085",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 20 },
+      { "question_number": 2, "answer_text": "", "score": 8 },
+      { "question_number": 3, "answer_text": "", "score": 12 }
+    ]
   },
   {
-    "student_id": "2271086",
-    "scores": {
-      "1": 2,
-      "2": 30,
-      "3": 16
-    }
+    "student_code": "2271086",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 2 },
+      { "question_number": 2, "answer_text": "", "score": 30 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   },
   {
-    "student_id": "2271087",
-    "scores": {
-      "1": 5,
-      "2": 30,
-      "3": 6
-    }
+    "student_code": "2271087",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 5 },
+      { "question_number": 2, "answer_text": "", "score": 30 },
+      { "question_number": 3, "answer_text": "", "score": 6 }
+    ]
   },
   {
-    "student_id": "2271088",
-    "scores": {
-      "1": 32,
-      "2": 6,
-      "3": 24
-    }
-  },
-  {
-    "student_id": "2271089",
-    "scores": {
-      "1": 1,
-      "2": 6,
-      "3": 8
-    }
-  },
-  {
-    "student_id": "2271090",
-    "scores": {
-      "1": 36,
-      "2": 7,
-      "3": 2
-    }
-  },
-  {
-    "student_id": "2271091",
-    "scores": {
-      "1": 38,
-      "2": 10,
-      "3": 2
-    }
-  },
-  {
-    "student_id": "2271092",
-    "scores": {
-      "1": 21,
-      "2": 17,
-      "3": 17
-    }
-  },
-  {
-    "student_id": "2271093",
-    "scores": {
-      "1": 8,
-      "2": 29,
-      "3": 28
-    }
-  },
-  {
-    "student_id": "2271094",
-    "scores": {
-      "1": 34,
-      "2": 4,
-      "3": 25
-    }
-  },
-  {
-    "student_id": "2271095",
-    "scores": {
-      "1": 30,
-      "2": 15,
-      "3": 23
-    }
-  },
-  {
-    "student_id": "2271096",
-    "scores": {
-      "1": 25,
-      "2": 24,
-      "3": 0
-    }
-  },
-  {
-    "student_id": "2271097",
-    "scores": {
-      "1": 16,
-      "2": 22,
-      "3": 26
-    }
-  },
-  {
-    "student_id": "2271098",
-    "scores": {
-      "1": 36,
-      "2": 27,
-      "3": 15
-    }
-  },
-  {
-    "student_id": "2271099",
-    "scores": {
-      "1": 21,
-      "2": 12,
-      "3": 29
-    }
-  },
-  {
-    "student_id": "2271100",
-    "scores": {
-      "1": 14,
-      "2": 26,
-      "3": 16
-    }
+    "student_code": "2271088",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 32 },
+      { "question_number": 2, "answer_text": "", "score": 6 },
+      { "question_number": 3, "answer_text": "", "score": 24 }
+    ]
+  },
+  {
+    "student_code": "2271089",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 1 },
+      { "question_number": 2, "answer_text": "", "score": 6 },
+      { "question_number": 3, "answer_text": "", "score": 8 }
+    ]
+  },
+  {
+    "student_code": "2271090",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 36 },
+      { "question_number": 2, "answer_text": "", "score": 7 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
+  },
+  {
+    "student_code": "2271091",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 38 },
+      { "question_number": 2, "answer_text": "", "score": 10 },
+      { "question_number": 3, "answer_text": "", "score": 2 }
+    ]
+  },
+  {
+    "student_code": "2271092",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 17 },
+      { "question_number": 3, "answer_text": "", "score": 17 }
+    ]
+  },
+  {
+    "student_code": "2271093",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 8 },
+      { "question_number": 2, "answer_text": "", "score": 29 },
+      { "question_number": 3, "answer_text": "", "score": 28 }
+    ]
+  },
+  {
+    "student_code": "2271094",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 34 },
+      { "question_number": 2, "answer_text": "", "score": 4 },
+      { "question_number": 3, "answer_text": "", "score": 25 }
+    ]
+  },
+  {
+    "student_code": "2271095",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 30 },
+      { "question_number": 2, "answer_text": "", "score": 15 },
+      { "question_number": 3, "answer_text": "", "score": 23 }
+    ]
+  },
+  {
+    "student_code": "2271096",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 25 },
+      { "question_number": 2, "answer_text": "", "score": 24 },
+      { "question_number": 3, "answer_text": "", "score": 0 }
+    ]
+  },
+  {
+    "student_code": "2271097",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 16 },
+      { "question_number": 2, "answer_text": "", "score": 22 },
+      { "question_number": 3, "answer_text": "", "score": 26 }
+    ]
+  },
+  {
+    "student_code": "2271098",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 36 },
+      { "question_number": 2, "answer_text": "", "score": 27 },
+      { "question_number": 3, "answer_text": "", "score": 15 }
+    ]
+  },
+  {
+    "student_code": "2271099",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 21 },
+      { "question_number": 2, "answer_text": "", "score": 12 },
+      { "question_number": 3, "answer_text": "", "score": 29 }
+    ]
+  },
+  {
+    "student_code": "2271100",
+    "answers": [
+      { "question_number": 1, "answer_text": "", "score": 14 },
+      { "question_number": 2, "answer_text": "", "score": 26 },
+      { "question_number": 3, "answer_text": "", "score": 16 }
+    ]
   }
 ]

@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Form
 from sqlalchemy.orm import Session
 import json
+import re
 from decimal import Decimal
 
 from models import Question
@@ -8,6 +9,22 @@ from schemas import QuestionExtractionResult, TestParseResult, AnswerKeyResult
 from dependencies import get_db
 
 router = APIRouter(prefix="/question-papers", tags=["문제지"])
+
+
+def count_subquestions(text: str) -> int:
+    """
+    문제 텍스트에서 소문항 개수 세기.
+    - (1), (2), (3) 형식
+    - ①, ②, ③ 형식
+    하나도 없으면 1로 간주.
+    """
+    # (1), ( 2 ) 등
+    paren_nums = re.findall(r"\(\s*\d+\s*\)", text)
+    # ①~⑨
+    circled_nums = re.findall(r"[①②③④⑤⑥⑦⑧⑨]", text)
+
+    cnt = len(paren_nums) + len(circled_nums)
+    return cnt if cnt > 0 else 1
 
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
@@ -44,14 +61,47 @@ async def upload_question_paper(
                 detail=f"JSON 파싱 실패: {str(e)}"
             )
         
-        # test_parse.py 결과 형식 검증
+        # test_parse.py 결과 형식 검증 또는 원시 형식 처리
         try:
             test_parse_result = TestParseResult(**parsed_data)
-        except Exception as e:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"test_parse.py 결과 형식 검증 실패: {str(e)}"
-            )
+        except Exception:
+            # 원시 형식(question_count, total_score 없음)인 경우 자동 계산
+            if "problems" in parsed_data and isinstance(parsed_data["problems"], list):
+                problems_out = []
+                total_score = 0
+                
+                for p in parsed_data["problems"]:
+                    if "problem_index" in p and "raw_text" in p and "score" in p:
+                        idx = p["problem_index"]
+                        text = p["raw_text"]
+                        score = int(p["score"])
+                        
+                        q_count = count_subquestions(text)
+                        total_score += score
+                        
+                        problems_out.append({
+                            "problem_index": idx,
+                            "question_count": q_count,
+                            "score": score,
+                            "raw_text": text,
+                        })
+                
+                if problems_out:
+                    parsed_data = {
+                        "problems": problems_out,
+                        "total_score": total_score,
+                    }
+                    test_parse_result = TestParseResult(**parsed_data)
+                else:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail="올바른 문제 형식이 아닙니다. problems 배열에 problem_index, raw_text, score가 필요합니다."
+                    )
+            else:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=f"test_parse.py 결과 형식 검증 실패: problems 필드가 필요합니다."
+                )
         
         # 문제가 없는지 확인
         if not test_parse_result.problems:
