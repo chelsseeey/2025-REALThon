@@ -10,7 +10,7 @@ from dependencies import get_db
 router = APIRouter(prefix="/answer-sheets", tags=["답안지"])
 
 
-@router.post("/upload", status_code=status.HTTP_201_CREATED)
+@router.post("/answer-key", status_code=status.HTTP_201_CREATED)
 async def upload_answer_sheets(
     extraction_results_json: str = Form(...),
     db: Session = Depends(get_db)
@@ -108,7 +108,7 @@ async def upload_answer_sheets(
         )
 
 
-@router.post("/answer-key", status_code=status.HTTP_201_CREATED)
+@router.post("/upload", status_code=status.HTTP_201_CREATED)
 async def upload_answer_key(
     answer_key_json: str = Form(...),
     db: Session = Depends(get_db)
