@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
 
 body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-/* 업로드 박스 기본 */
+/* 업로드 박스 */
 .upload-box {
   border: 2px dashed #cbd5e1;
   border-radius: 1rem;
@@ -18,109 +18,70 @@ body {
   background-color: #eef2ff;
   transform: translateY(-2px);
 }
-
-/* [추가됨] 드래그 앤 드롭 활성화 시 스타일 */
 .upload-box.drag-over {
-  border-color: #4f46e5 !important; /* 진한 인디고 */
-  background-color: #e0e7ff !important; /* 연한 인디고 배경 */
+  border-color: #4f46e5 !important;
+  background-color: #e0e7ff !important;
   transform: scale(1.02);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-.upload-box.drag-over .icon-placeholder {
-  color: #4f46e5;
-  transform: scale(1.1);
 }
 
 /* 버튼 */
 .btn-primary {
   background-color: #4f46e5;
   color: white;
-  padding: 0.85rem 2.5rem;
   border-radius: 0.5rem;
   font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
   transition: background-color 0.2s;
 }
 .btn-primary:hover {
   background-color: #4338ca;
 }
 
-/* 문항 설정 행 스타일 */
-.question-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* 문항 카드 (메인 화면 리스트) */
+.question-card {
   background: white;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
   border: 1px solid #e2e8f0;
-  transition: all 0.2s;
-}
-.question-row:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* 점수 입력 인풋 */
-.score-input {
-  width: 80px;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.25rem;
-  text-align: center;
-  font-weight: bold;
-  color: #1e293b;
-}
-.score-input:focus {
-  outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
-}
-
-/* 삭제 버튼 */
-.btn-remove {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: #94a3b8;
-  transition: all 0.2s;
-}
-.btn-remove:hover {
-  background-color: #fee2e2;
-  color: #ef4444;
-}
-
-/* 통계 카드 */
-.stat-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* 차트 카드 */
-.chart-card {
-  background: white;
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2e8f0;
-  transition: transform 0.2s;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
-.chart-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.question-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.15);
+  border-color: #818cf8;
+}
+.question-card::after {
+  content: "상세 분석 보기 →";
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4f46e5;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+}
+.question-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.chart-container {
-  position: relative;
-  height: 250px;
-  width: 100%;
-  margin-top: 1rem;
+/* 모달 스타일 */
+#report-modal.open {
+  display: flex;
+  opacity: 1;
+}
+#report-modal.open #modal-content {
+  transform: scale(1);
+}
+
+/* 드롭다운 (헤더) */
+/* Tailwind의 group-hover로도 처리되지만, 혹시 모를 호환성을 위해 추가 */
+.group:hover .absolute {
+  display: block;
 }
 
 /* 로딩 */
