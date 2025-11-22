@@ -3,8 +3,18 @@ import base64
 import json
 import re
 from openai import OpenAI
+from dotenv import load_dotenv
 
-client = OpenAI(api_key="")  # <- 키 넣기
+# .env 파일에서 환경변수 로드
+load_dotenv()
+
+# OpenAI API 키를 환경변수에서 읽어오기
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_API_KEY 환경변수가 설정되지 않았습니다. 환경변수를 설정해주세요.")
+
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 def encode_image(image_path: str) -> str:

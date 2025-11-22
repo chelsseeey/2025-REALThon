@@ -34,3 +34,18 @@ build/
 .DS_Store
 Thumbs.db
 
+# Test files
+test_parse.py
+*test_parse.py
+
+# API Keys
+*.key
+*api_key*
+*apikey*
+*OPENAI_API_KEY*
+openai_key.txt
+.env.local
+.env.production
+secrets.json
+config.json
+.env
