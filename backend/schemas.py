@@ -139,6 +139,19 @@ class QuestionExtractionResult(BaseModel):
     questions: List[QuestionItem]  # 문제 목록
     total_questions: int  # 문항수
 
+# test_parse.py 결과 형식 스키마
+class TestParseProblemItem(BaseModel):
+    """test_parse.py의 문제 항목"""
+    problem_index: int  # 문제 번호
+    question_count: int  # 소문항 개수
+    score: int  # 배점
+    raw_text: str  # 문제 전체 텍스트
+
+class TestParseResult(BaseModel):
+    """test_parse.py의 parse_exam 함수 반환 형식"""
+    problems: List[TestParseProblemItem]  # 문제 목록
+    total_score: int  # 총 배점
+
 class AnswerItem(BaseModel):
     """답변 정보"""
     question_number: int  # 문항 번호
