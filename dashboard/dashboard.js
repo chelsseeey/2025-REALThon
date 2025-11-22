@@ -1,283 +1,248 @@
-// 전역 상태 관리
-let questionList = [];
-let nextQuestionId = 1;
-
 document.addEventListener("DOMContentLoaded", () => {
-  // 초기 문항 5개 세팅
-  initializeQuestions(5);
-
-  // [추가됨] 드래그 앤 드롭 설정
-  setupDragAndDrop();
-
-  // 기존 파일 선택 이벤트
-  const fileInput = document.getElementById("studentFiles");
-  fileInput.addEventListener("change", (e) =>
-    updateFileCountUI(e.target.files.length)
+  setupDragAndDrop("blank-drop-zone", "blankFile", handleBlankFileSelect);
+  setupDragAndDrop(
+    "student-drop-zone",
+    "studentFiles",
+    handleStudentFileSelect
   );
 
   document
-    .getElementById("go-setup-btn")
-    .addEventListener("click", showSetupSection);
+    .getElementById("blankFile")
+    .addEventListener("change", (e) => handleBlankFileSelect(e.target.files));
+  document
+    .getElementById("studentFiles")
+    .addEventListener("change", (e) => handleStudentFileSelect(e.target.files));
+  document
+    .getElementById("analyze-btn")
+    .addEventListener("click", startFinalAnalysis);
+
+  // 모달 닫기 버튼 이벤트
+  document
+    .getElementById("close-modal-btn")
+    .addEventListener("click", closeModal);
+  // 모달 배경 클릭 시 닫기
+  document.getElementById("report-modal").addEventListener("click", (e) => {
+    if (e.target.id === "report-modal") closeModal();
+  });
 });
 
-// ==========================================
-// 1. 드래그 앤 드롭 기능 구현
-// ==========================================
-function setupDragAndDrop() {
-  const dropZone = document.getElementById("drop-zone");
-  const fileInput = document.getElementById("studentFiles");
-
-  // 1) 드래그 진입
-  dropZone.addEventListener("dragover", (e) => {
-    e.preventDefault(); // 필수: 브라우저가 파일 여는 것 방지
-    e.stopPropagation();
-    dropZone.classList.add("drag-over");
-  });
-
-  // 2) 드래그 나감
-  dropZone.addEventListener("dragleave", (e) => {
+// 1. 드래그 앤 드롭 (기존 동일)
+function setupDragAndDrop(zoneId, inputId, callback) {
+  const zone = document.getElementById(zoneId);
+  const input = document.getElementById(inputId);
+  zone.addEventListener("dragover", (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    dropZone.classList.remove("drag-over");
+    zone.classList.add("drag-over");
   });
-
-  // 3) 드롭
-  dropZone.addEventListener("drop", (e) => {
+  zone.addEventListener("dragleave", (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    dropZone.classList.remove("drag-over");
-
-    const files = e.dataTransfer.files;
-    if (files.length > 0) {
-      // input 태그에 파일 할당 (중요)
-      fileInput.files = files;
-      // UI 업데이트 트리거
-      updateFileCountUI(files.length);
+    zone.classList.remove("drag-over");
+  });
+  zone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    zone.classList.remove("drag-over");
+    if (e.dataTransfer.files.length > 0) {
+      input.files = e.dataTransfer.files;
+      callback(e.dataTransfer.files);
     }
   });
 }
 
-// 파일 개수 UI 업데이트 헬퍼 함수
-function updateFileCountUI(count) {
-  if (count > 0) {
-    const badge = document.getElementById("file-count-badge");
-    const label = document.getElementById("student-label");
-    badge.innerText = count;
-    badge.classList.remove("hidden");
-    label.innerHTML = `<span class="text-indigo-600 font-bold">${count}개</span>의 파일이 선택되었습니다.`;
+function handleBlankFileSelect(files) {
+  if (files.length > 0) {
+    document.getElementById(
+      "blank-label"
+    ).innerHTML = `<span class="text-green-600 font-bold">${files[0].name}</span><br>준비 완료`;
+    document.getElementById("blank-check").classList.remove("hidden");
+    document.getElementById("blank-drop-zone").style.borderColor = "#22c55e";
+    document.getElementById("blank-drop-zone").style.backgroundColor =
+      "#f0fdf4";
   }
 }
 
-// ==========================================
-// 2. 문항 관리 로직 (기존과 동일)
-// ==========================================
-function initializeQuestions(count) {
-  questionList = [];
-  nextQuestionId = 1;
-  const container = document.getElementById("questions-container");
-  container.innerHTML = "";
-  for (let i = 0; i < count; i++) {
-    addQuestion(false);
+function handleStudentFileSelect(files) {
+  if (files.length > 0) {
+    document.getElementById("file-count-badge").innerText = files.length;
+    document.getElementById("file-count-badge").classList.remove("hidden");
+    document.getElementById(
+      "student-label"
+    ).innerHTML = `<span class="text-indigo-600 font-bold">${files.length}개</span> 파일 선택됨`;
   }
-  updateTotalCount();
 }
 
-function addQuestion(shouldScroll = true) {
-  const qId = nextQuestionId++;
-  const qNum = questionList.length + 1;
-  questionList.push({ id: qId, score: 10 });
+// 2. 분석 시작
+async function startFinalAnalysis() {
+  const blank = document.getElementById("blankFile").files.length;
+  const students = document.getElementById("studentFiles").files.length;
 
-  const container = document.getElementById("questions-container");
-  const row = document.createElement("div");
-  row.className = "question-row fade-in";
-  row.id = `q-row-${qId}`;
-  row.innerHTML = `
-        <div class="flex items-center gap-3">
-            <span class="bg-indigo-100 text-indigo-700 text-sm font-bold px-3 py-1 rounded-full q-label">Q${qNum}</span>
-            <span class="text-slate-600 font-medium text-sm">문항</span>
-        </div>
-        <div class="flex items-center gap-4">
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-slate-400">만점</span>
-                <input type="number" value="10" min="1" class="score-input" onchange="updateScore(${qId}, this.value)">
-                <span class="text-sm text-slate-600">점</span>
-            </div>
-            <button onclick="removeQuestion(${qId})" class="btn-remove" title="문항 삭제">
-                <i class="fas fa-minus"></i>
-            </button>
-        </div>
-    `;
-  container.appendChild(row);
-  updateTotalCount();
-  refreshLabels();
-  if (shouldScroll) row.scrollIntoView({ behavior: "smooth", block: "center" });
-}
-
-function removeQuestion(id) {
-  if (questionList.length <= 1) {
-    alert("최소 1개의 문항은 있어야 합니다.");
+  if (blank === 0 || students === 0) {
+    alert("파일을 모두 업로드해주세요.");
     return;
   }
-  questionList = questionList.filter((q) => q.id !== id);
-  const row = document.getElementById(`q-row-${id}`);
-  if (row) row.remove();
-  updateTotalCount();
-  refreshLabels();
-}
 
-function updateScore(id, value) {
-  const question = questionList.find((q) => q.id === id);
-  if (question) question.score = parseInt(value) || 0;
-}
-
-function refreshLabels() {
-  const rows = document.querySelectorAll(".question-row");
-  rows.forEach((row, index) => {
-    const label = row.querySelector(".q-label");
-    label.innerText = `Q${index + 1}`;
-  });
-}
-
-function updateTotalCount() {
-  document.getElementById("total-q-count").innerText = questionList.length;
-}
-
-// ==========================================
-// 3. 페이지 전환 및 분석 로직
-// ==========================================
-
-function showSetupSection() {
-  const files = document.getElementById("studentFiles").files;
-  if (files.length === 0) {
-    alert("먼저 학생 답안지를 업로드해주세요.");
-    return;
-  }
   document.getElementById("upload-section").classList.add("hidden");
-  document.getElementById("setup-section").classList.remove("hidden");
-}
-
-function startFinalAnalysis() {
-  document.getElementById("setup-section").classList.add("hidden");
   document.getElementById("loading-section").classList.remove("hidden");
 
-  // [시뮬레이션]
   setTimeout(() => {
-    const mockData = generateMockDataBasedOnConfig(questionList);
+    const mockData = generateMockData();
     renderDashboard(mockData);
-  }, 2000);
+  }, 1500);
 }
 
-function generateMockDataBasedOnConfig(config) {
+// 3. Mock Data
+function generateMockData() {
   const studentCount = 30;
-  let totalMaxScore = 0;
-  let totalEarnedScore = 0;
-
-  const questionsData = config.map((q, index) => {
-    totalMaxScore += q.score;
-    const correctRate = Math.floor(Math.random() * 50) + 40;
-    const avgEarned = (q.score * correctRate) / 100;
-    totalEarnedScore += avgEarned;
-
-    return {
-      qNum: index + 1,
-      maxScore: q.score,
-      correctRate: correctRate,
-      errorDistribution: {
-        "단순 계산 실수": Math.floor(Math.random() * 20) + 5,
-        "풀이 과정 누락": Math.floor(Math.random() * 20) + 5,
-        "개념 이해 부족": Math.floor(Math.random() * 20) + 5,
-        기타: Math.floor(Math.random() * 5) + 1,
-      },
-    };
-  });
-
-  const hardest = questionsData.reduce((prev, curr) =>
-    prev.correctRate < curr.correctRate ? prev : curr
-  );
-
   return {
-    summary: {
-      totalStudents: studentCount,
-      avgScore: Math.round((totalEarnedScore / totalMaxScore) * 100),
-      hardestQuestion: `Q${hardest.qNum}`,
-    },
-    questions: questionsData,
+    totalStudents: studentCount,
+    questions: [
+      {
+        qNum: 1,
+        maxScore: 10,
+        qText:
+          "이차방정식 x² - 5x + 6 = 0 의 두 근을 구하고 과정을 서술하시오.",
+        correctRate: 85,
+        scoreLabels: ["0점", "1-3점", "4-6점", "7-9점", "10점"],
+        scoreData: [2, 1, 3, 4, 20],
+        avgScore: 8.5,
+        detailAnalysis: {
+          mistakes: [
+            "인수분해 부호 실수 ((x+2)(x+3)으로 계산)",
+            "근의 공식 대입 시 분모 계산 오류",
+          ],
+          missing: ["최종 답안에 'x=' 표기 누락", "풀이 과정 없이 답만 기재"],
+          keywords: ["인수분해", "근의 공식", "판별식"],
+        },
+      },
+      {
+        qNum: 2,
+        maxScore: 15,
+        qText: "행렬 A = [[1, 2], [3, 4]] 의 역행렬을 구하시오.",
+        correctRate: 50,
+        scoreLabels: ["0점", "1-5점", "6-10점", "11-14점", "15점"],
+        scoreData: [5, 8, 4, 3, 10],
+        avgScore: 7.2,
+        detailAnalysis: {
+          mistakes: [
+            "ad-bc 행렬식(Determinant) 계산 오류 (4-6 = -2를 2로 계산)",
+            "역행렬 공식 부호 위치 혼동",
+          ],
+          missing: [
+            "행렬식이 0이 아님을 확인하는 과정 누락",
+            "최종 행렬의 각 원소 약분 미수행",
+          ],
+          keywords: [
+            "Determinant(행렬식)",
+            "Adjugate Matrix(수반행렬)",
+            "역행렬 존재 조건",
+          ],
+        },
+      },
+      {
+        qNum: 3,
+        maxScore: 20,
+        qText: "함수 f(x) = sin(x)cos(x) 를 0에서 π까지 적분하시오.",
+        correctRate: 30,
+        scoreLabels: ["0점", "1-7점", "8-14점", "15-19점", "20점"],
+        scoreData: [10, 8, 5, 4, 3],
+        avgScore: 5.5,
+        detailAnalysis: {
+          mistakes: [
+            "치환적분 범위 재설정 누락 (0~π를 그대로 사용)",
+            "배각 공식 sin(2x) 변환 실수",
+          ],
+          missing: [
+            "적분상수 C 표기 (부정적분 혼동)",
+            "치환 변수 t에 대한 정의",
+          ],
+          keywords: ["치환적분법", "부분적분법", "삼각함수 항등식"],
+        },
+      },
+    ],
   };
 }
 
+// 4. 메인 대시보드 렌더링
 function renderDashboard(data) {
   document.getElementById("loading-section").classList.add("hidden");
   document.getElementById("result-section").classList.remove("hidden");
-
   document.getElementById(
-    "res-total-students"
-  ).innerText = `${data.summary.totalStudents}명`;
-  document.getElementById(
-    "res-avg-score"
-  ).innerText = `${data.summary.avgScore}점`;
-  document.getElementById("res-hardest-q").innerText =
-    data.summary.hardestQuestion;
+    "total-student-count"
+  ).innerText = `${data.totalStudents}명`;
 
-  const container = document.getElementById("charts-grid");
-  container.innerHTML = "";
+  const grid = document.getElementById("questions-grid");
+  grid.innerHTML = "";
 
-  data.questions.forEach((q, index) => {
+  data.questions.forEach((q) => {
     const card = document.createElement("div");
-    card.className = "chart-card";
+    card.className = "question-card group";
+    card.onclick = () => openModal(q); // 클릭 시 모달 오픈
+
     card.innerHTML = `
-            <div class="flex justify-between items-start mb-4">
-                <div>
-                    <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2 py-1 rounded">Q${
-                      q.qNum
-                    }</span>
-                    <span class="text-xs text-slate-400 ml-1">(${
-                      q.maxScore
-                    }점)</span>
-                    <h4 class="font-bold text-slate-800 mt-1">문항 ${
-                      q.qNum
-                    } 분석</h4>
-                </div>
-                <div class="text-right">
-                    <span class="text-xs text-slate-400 block">정답률</span>
-                    <span class="text-lg font-bold ${getScoreColor(
-                      q.correctRate
-                    )}">${q.correctRate}%</span>
-                </div>
-            </div>
-            <div class="chart-container">
-                <canvas id="chart-${index}"></canvas>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-100 text-center">
-                <p class="text-xs text-slate-500">
-                    가장 많은 오답 원인: <span class="font-bold text-slate-700">${getTopReason(
-                      q.errorDistribution
-                    )}</span>
-                </p>
-            </div>
-        `;
-    container.appendChild(card);
-    drawPieChart(`chart-${index}`, q.errorDistribution);
+        <div class="flex justify-between items-start mb-4">
+            <span class="bg-indigo-100 text-indigo-700 font-bold px-2 py-1 rounded text-sm">Q${q.qNum}</span>
+            <span class="text-slate-400 text-sm font-medium"></span>
+        </div>
+        <p class="text-slate-800 font-bold text-lg mb-2 line-clamp-3 break-keep">
+            ${q.qText}
+        </p>
+    `;
+    grid.appendChild(card);
   });
 }
 
-function drawPieChart(canvasId, distribution) {
-  const ctx = document.getElementById(canvasId).getContext("2d");
-  new Chart(ctx, {
-    type: "doughnut",
+// 5. 모달 상세 보고서 로직
+let detailChartInstance = null;
+
+function openModal(qData) {
+  const modal = document.getElementById("report-modal");
+
+  document.getElementById("modal-q-num").innerText = `Q${qData.qNum}`;
+  document.getElementById(
+    "modal-title"
+  ).innerText = `문항 ${qData.qNum} 상세 분석`;
+  document.getElementById("modal-q-text").innerText = qData.qText;
+
+  document.getElementById(
+    "modal-avg-score"
+  ).innerText = `평균: ${qData.avgScore}점`;
+  document.getElementById(
+    "modal-max-score"
+  ).innerText = `배점: ${qData.maxScore}점`;
+
+  const fillList = (id, items) => {
+    const list = document.getElementById(id);
+    list.innerHTML = "";
+    items.forEach((item) => {
+      const li = document.createElement(
+        id === "analysis-keywords" ? "span" : "li"
+      );
+      if (id === "analysis-keywords") {
+        li.className =
+          "bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-100";
+      }
+      li.innerText = item;
+      list.appendChild(li);
+    });
+  };
+
+  fillList("analysis-mistakes", qData.detailAnalysis.mistakes);
+  fillList("analysis-missing", qData.detailAnalysis.missing);
+  fillList("analysis-keywords", qData.detailAnalysis.keywords);
+
+  const ctx = document.getElementById("detail-chart").getContext("2d");
+  if (detailChartInstance) detailChartInstance.destroy();
+
+  detailChartInstance = new Chart(ctx, {
+    type: "bar",
     data: {
-      labels: Object.keys(distribution),
+      labels: qData.scoreLabels,
       datasets: [
         {
-          data: Object.values(distribution),
-          backgroundColor: [
-            "#36a2eb",
-            "#ff6384",
-            "#ffce56",
-            "#4bc0c0",
-            "#9966ff",
-          ],
-          borderWidth: 0,
-          hoverOffset: 4,
+          label: "학생 수",
+          data: qData.scoreData,
+          backgroundColor: "#6366f1",
+          borderRadius: 4,
+          barPercentage: 0.6,
         },
       ],
     },
@@ -285,23 +250,55 @@ function drawPieChart(canvasId, distribution) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: {
-          position: "right",
-          labels: { boxWidth: 10, font: { size: 10 } },
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => `점수 구간: ${items[0].label}`,
+            label: (item) =>
+              `${item.raw}명 (${Math.round((item.raw / 30) * 100)}%)`,
+          },
         },
-        title: { display: false },
       },
-      layout: { padding: 0 },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { display: true, drawBorder: false },
+          ticks: { stepSize: 1 },
+        },
+        x: {
+          grid: { display: false },
+        },
+      },
     },
   });
+
+  modal.classList.remove("hidden");
+  setTimeout(() => modal.classList.add("open"), 10);
+  document.body.style.overflow = "hidden";
 }
 
-function getScoreColor(score) {
-  if (score >= 80) return "text-green-600";
-  if (score >= 50) return "text-yellow-600";
-  return "text-red-600";
+function closeModal() {
+  const modal = document.getElementById("report-modal");
+  modal.classList.remove("open");
+  setTimeout(() => {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }, 300);
 }
 
-function getTopReason(dist) {
-  return Object.keys(dist).reduce((a, b) => (dist[a] > dist[b] ? a : b));
+// 6. 과목 변경 기능 (추가됨)
+function changeSubject(subjectName) {
+  const currentSubjectSpan = document.getElementById("current-subject");
+  currentSubjectSpan.innerText = subjectName;
+
+  const checkIcons = document.querySelectorAll(".check-icon");
+  checkIcons.forEach((icon) => {
+    if (icon.dataset.subject === subjectName) {
+      icon.classList.remove("opacity-0");
+      icon.classList.add("opacity-100");
+    } else {
+      icon.classList.remove("opacity-100");
+      icon.classList.add("opacity-0");
+    }
+  });
 }
