@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// 1. 드래그 앤 드롭 (기존 동일)
+// 1. 드래그 앤 드롭
 function setupDragAndDrop(zoneId, inputId, callback) {
   const zone = document.getElementById(zoneId);
   const input = document.getElementById(inputId);
@@ -92,6 +92,107 @@ async function startFinalAnalysis() {
 // 3. Mock Data
 function generateMockData() {
   const studentCount = 30;
+
+  // 사용자가 제공한 클러스터 분석 데이터
+  const commonClusterData = [
+    {
+      cluster_index: 1,
+      cognitive_diagnosis: {
+        misconceptions: ["다항식의 방정식 해 이해 부족", "부등식 해석의 혼동"],
+        logical_gaps: ["가장 기본적 해를 구하는 단계 생략"],
+        missing_keywords: ["해 구하기", "부등식 변환", "다항식 성질"],
+      },
+      pattern_characteristics: {
+        specificity: "구체적",
+        approach: "정석 풀이",
+        error_type: "개념 오류 위주",
+      },
+      quantitative_metrics: {
+        num_students: 8,
+        percentage: 27.7,
+        relative_length: "평균 문자 수가 중간 정도",
+        expected_score_level: "중~하",
+      },
+      overall_summary:
+        "이 클러스터의 학생들은 다항식 방정식과 부등식에 대한 이해가 부족하며, 기본적인 해 구하는 과정에서 논리적 비약이 관찰된다.",
+    },
+    {
+      cluster_index: 2,
+      cognitive_diagnosis: {
+        misconceptions: [
+          "다항식의 근 판별법에 대한 이해 부족",
+          "함수의 성질에 대한 혼동",
+        ],
+        logical_gaps: [
+          "근의 개수에 대한 검토 부족",
+          "부등식 적용에 대한 명확한 설명 결여",
+        ],
+        missing_keywords: ["근 판별식", "부등식 해석", "p의 값에 대한 조건"],
+      },
+      pattern_characteristics: {
+        specificity: "구체적",
+        approach: "정석 풀이",
+        error_type: "개념 오류 위주",
+      },
+      quantitative_metrics: {
+        num_students: 12,
+        percentage: 40.4,
+        relative_length: "평균적으로 적정한 길이를 유지하나 중복이 있음",
+        expected_score_level: "20~30점대에 머무를 가능성이 큼",
+      },
+      overall_summary:
+        "클러스터 2의 학생들은 정석적 접근 방식으로 문제를 해결하려 했으나, 개념적 혼동과 논리적 결손으로 인해 일부 답안에서 충분한 깊이를 가지지 못하였습니다.",
+    },
+    {
+      cluster_index: 3,
+      cognitive_diagnosis: {
+        misconceptions: [
+          "다항식의 근에 대한 이해 부족",
+          "f(x)와 x의 관계 해석 오류",
+        ],
+        logical_gaps: ["함수의 성질을 설명하는 단계 부재"],
+        missing_keywords: ["함수의 연속성", "극한 개념"],
+      },
+      pattern_characteristics: {
+        specificity: "구체적",
+        approach: "정석 풀이",
+        error_type: "개념 오류",
+      },
+      quantitative_metrics: {
+        num_students: 8,
+        percentage: 29.8,
+        relative_length: "다른 클러스터 대비 보통 수준",
+        expected_score_level: "중~하",
+      },
+      overall_summary:
+        "이 클러스터는 다항식의 근을 다루면서 개념적 이해 부족과 특정 단계의 논리적 결손이 나타나며, 정석적인 접근을 따르지만 오류가 빈번하게 발생하는 모습을 보인다.",
+    },
+    {
+      cluster_index: 4,
+      cognitive_diagnosis: {
+        misconceptions: [
+          "함수의 정의역과 치역 개념 혼동",
+          "직선의 방정식에 대한 이해 부족",
+        ],
+        logical_gaps: ["구간 설정 후 함수의 성질을 활용한 설명 단계가 부족"],
+        missing_keywords: ["함수의 연속성", "극한", "대수적 조작"],
+      },
+      pattern_characteristics: {
+        specificity: "보통",
+        approach: "직관적 접근",
+        error_type: "개념 오류 위주",
+      },
+      quantitative_metrics: {
+        num_students: 2,
+        percentage: 2.1,
+        relative_length: "다른 클러스터에 비해 짧은 편",
+        expected_score_level: "대략 상/중",
+      },
+      overall_summary:
+        "클러스터 4의 학생들은 함수에 대한 개념적 오해와 논리적 비약이 있으며, 답안이 구체적이지 않고 간결해 전반적으로 중간 정도의 점수를 예상하게 된다.",
+    },
+  ];
+
   return {
     totalStudents: studentCount,
     questions: [
@@ -100,62 +201,28 @@ function generateMockData() {
         maxScore: 10,
         qText:
           "이차방정식 x² - 5x + 6 = 0 의 두 근을 구하고 과정을 서술하시오.",
-        correctRate: 85,
+        avgScore: 8.5,
         scoreLabels: ["0점", "1-3점", "4-6점", "7-9점", "10점"],
         scoreData: [2, 1, 3, 4, 20],
-        avgScore: 8.5,
-        detailAnalysis: {
-          mistakes: [
-            "인수분해 부호 실수 ((x+2)(x+3)으로 계산)",
-            "근의 공식 대입 시 분모 계산 오류",
-          ],
-          missing: ["최종 답안에 'x=' 표기 누락", "풀이 과정 없이 답만 기재"],
-          keywords: ["인수분해", "근의 공식", "판별식"],
-        },
+        clusters: commonClusterData,
       },
       {
         qNum: 2,
         maxScore: 15,
         qText: "행렬 A = [[1, 2], [3, 4]] 의 역행렬을 구하시오.",
-        correctRate: 50,
+        avgScore: 7.2,
         scoreLabels: ["0점", "1-5점", "6-10점", "11-14점", "15점"],
         scoreData: [5, 8, 4, 3, 10],
-        avgScore: 7.2,
-        detailAnalysis: {
-          mistakes: [
-            "ad-bc 행렬식(Determinant) 계산 오류 (4-6 = -2를 2로 계산)",
-            "역행렬 공식 부호 위치 혼동",
-          ],
-          missing: [
-            "행렬식이 0이 아님을 확인하는 과정 누락",
-            "최종 행렬의 각 원소 약분 미수행",
-          ],
-          keywords: [
-            "Determinant(행렬식)",
-            "Adjugate Matrix(수반행렬)",
-            "역행렬 존재 조건",
-          ],
-        },
+        clusters: commonClusterData,
       },
       {
         qNum: 3,
         maxScore: 20,
         qText: "함수 f(x) = sin(x)cos(x) 를 0에서 π까지 적분하시오.",
-        correctRate: 30,
+        avgScore: 5.5,
         scoreLabels: ["0점", "1-7점", "8-14점", "15-19점", "20점"],
         scoreData: [10, 8, 5, 4, 3],
-        avgScore: 5.5,
-        detailAnalysis: {
-          mistakes: [
-            "치환적분 범위 재설정 누락 (0~π를 그대로 사용)",
-            "배각 공식 sin(2x) 변환 실수",
-          ],
-          missing: [
-            "적분상수 C 표기 (부정적분 혼동)",
-            "치환 변수 t에 대한 정의",
-          ],
-          keywords: ["치환적분법", "부분적분법", "삼각함수 항등식"],
-        },
+        clusters: commonClusterData,
       },
     ],
   };
@@ -175,12 +242,11 @@ function renderDashboard(data) {
   data.questions.forEach((q) => {
     const card = document.createElement("div");
     card.className = "question-card group";
-    card.onclick = () => openModal(q); // 클릭 시 모달 오픈
+    card.onclick = () => openModal(q);
 
     card.innerHTML = `
         <div class="flex justify-between items-start mb-4">
             <span class="bg-indigo-100 text-indigo-700 font-bold px-2 py-1 rounded text-sm">Q${q.qNum}</span>
-            <span class="text-slate-400 text-sm font-medium"></span>
         </div>
         <p class="text-slate-800 font-bold text-lg mb-2 line-clamp-3 break-keep">
             ${q.qText}
@@ -191,48 +257,27 @@ function renderDashboard(data) {
 }
 
 // 5. 모달 상세 보고서 로직
-let detailChartInstance = null;
+let histogramChart = null;
+let pieChart = null;
+let currentClusters = [];
 
 function openModal(qData) {
   const modal = document.getElementById("report-modal");
+  currentClusters = qData.clusters;
 
   document.getElementById("modal-q-num").innerText = `Q${qData.qNum}`;
-  document.getElementById(
-    "modal-title"
-  ).innerText = `문항 ${qData.qNum} 상세 분석`;
   document.getElementById("modal-q-text").innerText = qData.qText;
-
   document.getElementById(
     "modal-avg-score"
-  ).innerText = `평균: ${qData.avgScore}점`;
-  document.getElementById(
-    "modal-max-score"
-  ).innerText = `배점: ${qData.maxScore}점`;
+  ).innerText = `평균: ${qData.avgScore}점 / ${qData.maxScore}점`;
 
-  const fillList = (id, items) => {
-    const list = document.getElementById(id);
-    list.innerHTML = "";
-    items.forEach((item) => {
-      const li = document.createElement(
-        id === "analysis-keywords" ? "span" : "li"
-      );
-      if (id === "analysis-keywords") {
-        li.className =
-          "bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-100";
-      }
-      li.innerText = item;
-      list.appendChild(li);
-    });
-  };
+  resetClusterDetailPanel();
 
-  fillList("analysis-mistakes", qData.detailAnalysis.mistakes);
-  fillList("analysis-missing", qData.detailAnalysis.missing);
-  fillList("analysis-keywords", qData.detailAnalysis.keywords);
+  // 1. 히스토그램 차트
+  const ctxHist = document.getElementById("detail-chart").getContext("2d");
+  if (histogramChart) histogramChart.destroy();
 
-  const ctx = document.getElementById("detail-chart").getContext("2d");
-  if (detailChartInstance) detailChartInstance.destroy();
-
-  detailChartInstance = new Chart(ctx, {
+  histogramChart = new Chart(ctxHist, {
     type: "bar",
     data: {
       labels: qData.scoreLabels,
@@ -240,7 +285,7 @@ function openModal(qData) {
         {
           label: "학생 수",
           data: qData.scoreData,
-          backgroundColor: "#6366f1",
+          backgroundColor: "#818cf8",
           borderRadius: 4,
           barPercentage: 0.6,
         },
@@ -249,25 +294,56 @@ function openModal(qData) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { stepSize: 1 } },
+        x: { grid: { display: false } },
+      },
+    },
+  });
+
+  // 2. 클러스터 파이 차트
+  const ctxPie = document.getElementById("cluster-pie-chart").getContext("2d");
+  if (pieChart) pieChart.destroy();
+
+  const pieLabels = currentClusters.map((c) => `Cluster ${c.cluster_index}`);
+  const pieData = currentClusters.map(
+    (c) => c.quantitative_metrics.num_students
+  );
+
+  pieChart = new Chart(ctxPie, {
+    type: "doughnut",
+    data: {
+      labels: pieLabels,
+      datasets: [
+        {
+          data: pieData,
+          backgroundColor: ["#fb7185", "#f472b6", "#c084fc", "#818cf8"],
+          borderWidth: 0,
+          hoverOffset: 10,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
-        legend: { display: false },
+        legend: { position: "right", labels: { font: { size: 11 } } },
         tooltip: {
           callbacks: {
-            title: (items) => `점수 구간: ${items[0].label}`,
-            label: (item) =>
-              `${item.raw}명 (${Math.round((item.raw / 30) * 100)}%)`,
+            label: function (context) {
+              let label = context.label || "";
+              let value = context.parsed || 0;
+              return `${label}: ${value}명`;
+            },
           },
         },
       },
-      scales: {
-        y: {
-          beginAtZero: true,
-          grid: { display: true, drawBorder: false },
-          ticks: { stepSize: 1 },
-        },
-        x: {
-          grid: { display: false },
-        },
+      onClick: (evt, elements) => {
+        if (elements.length > 0) {
+          const index = elements[0].index;
+          updateClusterDetailPanel(index);
+        }
       },
     },
   });
@@ -275,6 +351,55 @@ function openModal(qData) {
   modal.classList.remove("hidden");
   setTimeout(() => modal.classList.add("open"), 10);
   document.body.style.overflow = "hidden";
+}
+
+function resetClusterDetailPanel() {
+  document.getElementById("selected-cluster-badge").innerText = "선택 안됨";
+  document.getElementById("selected-cluster-badge").className =
+    "bg-slate-100 text-slate-500 text-xs px-2 py-1 rounded font-bold";
+  document.getElementById("cluster-placeholder").classList.remove("hidden");
+  document.getElementById("cluster-content").classList.add("hidden");
+}
+
+function updateClusterDetailPanel(index) {
+  const data = currentClusters[index];
+
+  document.getElementById("cluster-placeholder").classList.add("hidden");
+  document.getElementById("cluster-content").classList.remove("hidden");
+
+  const badge = document.getElementById("selected-cluster-badge");
+  badge.innerText = `Cluster ${data.cluster_index}`;
+  badge.className =
+    "bg-indigo-600 text-white text-xs px-2 py-1 rounded font-bold transition-colors";
+
+  const fillList = (elementId, items) => {
+    const list = document.getElementById(elementId);
+    list.innerHTML = "";
+    if (!items || items.length === 0) {
+      list.innerHTML = "<li class='text-slate-400 italic'>해당 사항 없음</li>";
+      return;
+    }
+    items.forEach((item) => {
+      if (elementId === "detail-keywords") {
+        const span = document.createElement("span");
+        span.className =
+          "bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs border border-blue-100";
+        span.innerText = item;
+        list.appendChild(span);
+      } else {
+        const li = document.createElement("li");
+        li.innerText = item;
+        list.appendChild(li);
+      }
+    });
+  };
+
+  fillList("detail-misconceptions", data.cognitive_diagnosis.misconceptions);
+  fillList("detail-gaps", data.cognitive_diagnosis.logical_gaps);
+  fillList("detail-keywords", data.cognitive_diagnosis.missing_keywords);
+
+  // [수정됨] 박스 형태에 맞춰 텍스트만 깔끔하게 삽입 (따옴표 제거)
+  document.getElementById("detail-summary").innerText = data.overall_summary;
 }
 
 function closeModal() {
@@ -286,10 +411,8 @@ function closeModal() {
   }, 300);
 }
 
-// 6. 과목 변경 기능 (추가됨)
 function changeSubject(subjectName) {
-  const currentSubjectSpan = document.getElementById("current-subject");
-  currentSubjectSpan.innerText = subjectName;
+  document.getElementById("current-subject").innerText = subjectName;
 
   const checkIcons = document.querySelectorAll(".check-icon");
   checkIcons.forEach((icon) => {
