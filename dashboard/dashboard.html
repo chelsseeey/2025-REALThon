@@ -22,12 +22,12 @@
         class="flex items-center gap-3 cursor-pointer"
         onclick="location.reload()"
       >
-        <div
-          class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg"
-        >
-          IG
-        </div>
-        <h1 class="text-xl font-bold text-slate-800">학급 전체 오답 분석</h1>
+        <img
+          src="로고2.png"
+          alt="DEEPGRADE Logo"
+          class="h-8 w-auto object-contain"
+        />
+        <h1 class="text-xl font-bold text-slate-800 ml-2"></h1>
       </div>
 
       <div class="relative group h-full flex items-center cursor-pointer">
@@ -41,7 +41,7 @@
             >
             <span
               id="current-subject"
-              class="block text-sm font-bold text-indigo-600"
+              class="block text-sm font-bold text-blue-600"
               >선형대수학</span
             >
           </div>
@@ -53,7 +53,7 @@
         <div
           class="absolute top-full right-0 w-48 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-2 overflow-hidden z-50"
         >
-          <div class="py-1">
+          <div class="py-1" id="subject-menu-container">
             <div class="px-4 py-2 bg-slate-50 border-b border-slate-100">
               <span class="text-xs font-bold text-slate-400">내 강의 목록</span>
             </div>
@@ -61,40 +61,45 @@
             <a
               href="#"
               onclick="changeSubject('선형대수학')"
-              class="block px-4 py-3 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors flex justify-between items-center group/item"
+              class="subject-item block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors flex justify-between items-center group/item"
             >
               선형대수학
               <i
-                class="fas fa-check text-indigo-600 text-xs opacity-100 check-icon"
+                class="fas fa-check text-blue-600 text-xs opacity-100 check-icon"
                 data-subject="선형대수학"
               ></i>
             </a>
             <a
               href="#"
               onclick="changeSubject('공학수학 1')"
-              class="block px-4 py-3 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors flex justify-between items-center group/item"
+              class="subject-item block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors flex justify-between items-center group/item"
             >
               공학수학 1
               <i
-                class="fas fa-check text-indigo-600 text-xs opacity-0 check-icon"
+                class="fas fa-check text-blue-600 text-xs opacity-0 check-icon"
                 data-subject="공학수학 1"
               ></i>
             </a>
             <a
               href="#"
               onclick="changeSubject('확률과 통계')"
-              class="block px-4 py-3 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors flex justify-between items-center group/item"
+              class="subject-item block px-4 py-3 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors flex justify-between items-center group/item"
             >
               확률과 통계
               <i
-                class="fas fa-check text-indigo-600 text-xs opacity-0 check-icon"
+                class="fas fa-check text-blue-600 text-xs opacity-0 check-icon"
                 data-subject="확률과 통계"
               ></i>
             </a>
 
-            <div class="border-t border-slate-100 my-1"></div>
+            <div
+              class="border-t border-slate-100 my-1"
+              id="subject-divider"
+            ></div>
+
             <a
-              href="#"
+              href="javascript:void(0)"
+              onclick="openAddSubjectModal()"
               class="block px-4 py-2 text-sm text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors"
             >
               <i class="fas fa-plus-circle mr-2"></i>과목 추가
@@ -168,7 +173,7 @@
                 />
                 <div class="relative inline-block pointer-events-none">
                   <i
-                    class="fas fa-images text-5xl text-indigo-200 mb-4 transition-colors icon-placeholder"
+                    class="fas fa-images text-5xl text-blue-200 mb-4 transition-colors icon-placeholder"
                   ></i>
                   <span
                     id="file-count-badge"
@@ -190,7 +195,7 @@
 
             <button
               id="analyze-btn"
-              class="mt-12 btn-primary px-12 py-4 text-lg shadow-lg bg-indigo-600 hover:bg-indigo-700"
+              class="mt-12 btn-primary px-12 py-4 text-lg shadow-lg bg-blue-600 hover:bg-blue-700"
             >
               <i class="fas fa-robot mr-2"></i> 문항 분석 시작
             </button>
@@ -215,7 +220,7 @@
             <div class="text-right">
               <span class="text-sm text-slate-400">전체 응시자</span>
               <p
-                class="text-xl font-bold text-indigo-600"
+                class="text-xl font-bold text-blue-600"
                 id="total-student-count"
               >
                 0명
@@ -244,7 +249,7 @@
         >
           <div class="flex items-center gap-3">
             <span
-              class="bg-indigo-600 text-white text-sm font-bold px-3 py-1 rounded-full"
+              class="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full"
               id="modal-q-num"
               >Q1</span
             >
@@ -286,7 +291,7 @@
                   ><i class="fas fa-chart-bar mr-1"></i> Score
                   Distribution</span
                 >
-                <span class="text-indigo-600" id="modal-avg-score"
+                <span class="text-blue-600" id="modal-avg-score"
                   >평균: -점</span
                 >
               </h4>
@@ -325,11 +330,10 @@
                 >
                 <span
                   id="selected-cluster-badge"
-                  class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded font-bold"
+                  class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded font-bold"
                   >선택 안됨</span
                 >
               </h4>
-
               <div
                 id="cluster-detail-container"
                 class="bg-white border border-slate-100 rounded-xl shadow-sm p-6 flex-1 overflow-y-auto"
@@ -341,7 +345,6 @@
                   <i class="fas fa-search text-4xl mb-3 opacity-20"></i>
                   <p>왼쪽 그래프에서 클러스터를 선택해주세요.</p>
                 </div>
-
                 <div id="cluster-content" class="hidden space-y-6">
                   <div>
                     <h5
@@ -355,7 +358,6 @@
                       class="list-disc list-inside text-slate-600 text-sm space-y-1 bg-red-50 p-3 rounded-lg border border-red-100"
                     ></ul>
                   </div>
-
                   <div>
                     <h5
                       class="text-sm font-bold text-orange-500 mb-2 flex items-center"
@@ -367,7 +369,6 @@
                       class="list-disc list-inside text-slate-600 text-sm space-y-1 bg-orange-50 p-3 rounded-lg border border-orange-100"
                     ></ul>
                   </div>
-
                   <div>
                     <h5
                       class="text-sm font-bold text-blue-500 mb-2 flex items-center"
@@ -379,7 +380,6 @@
                       class="flex flex-wrap gap-2"
                     ></div>
                   </div>
-
                   <div>
                     <h5
                       class="text-sm font-bold text-green-600 mb-2 flex items-center"
@@ -395,6 +395,42 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="add-subject-modal"
+      class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 transform scale-95 transition-transform duration-300"
+      >
+        <h3 class="text-xl font-bold text-slate-800 mb-4">새 과목 추가</h3>
+        <div class="mb-4">
+          <label class="block text-sm font-bold text-slate-500 mb-2"
+            >과목명</label
+          >
+          <input
+            type="text"
+            id="new-subject-input"
+            class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+            placeholder="예: 미적분학"
+          />
+        </div>
+        <div class="flex justify-end gap-3">
+          <button
+            onclick="closeAddSubjectModal()"
+            class="px-4 py-2 text-slate-500 font-bold hover:bg-slate-100 rounded-lg transition-colors"
+          >
+            취소
+          </button>
+          <button
+            onclick="handleAddSubject()"
+            class="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            추가하기
+          </button>
         </div>
       </div>
     </div>
