@@ -3,16 +3,6 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from database import Base
 
-class User(Base):
-    __tablename__ = "users"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(String, unique=True, index=True, nullable=False)  # 사용자 ID (고유 식별자)
-    password = Column(String, nullable=False)  # 해시된 비밀번호 (hashed_password 대신 password로 명명)
-    
-    # 관계
-    documents = relationship("Document", back_populates="owner")
-
 
 class Document(Base):
     __tablename__ = "documents"
@@ -24,11 +14,7 @@ class Document(Base):
     file_size = Column(Integer, nullable=False)  # bytes
     file_type = Column(String, nullable=False, default="pdf")  # pdf, answer_sheet, graded_paper 등
     page_count = Column(Integer, nullable=True)  # PDF 페이지 수
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    
-    # 관계
-    owner = relationship("User", back_populates="documents")
 
 
 class Exam(Base):
@@ -49,7 +35,7 @@ class Question(Base):
     __tablename__ = "question"
     
     id = Column(Integer, primary_key=True, index=True)
-    exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=False)
+    exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=True)  # 시험 하나만 있다고 가정
     number = Column(Integer, nullable=False)  # 시험지 상 문항 번호 (1,2,3,...)
     text = Column(Text, nullable=False)  # 문항 지문
     score = Column(Numeric(5, 2), nullable=False)  # 배점 (예: 5.0점)
@@ -57,9 +43,9 @@ class Question(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     
-    # 제약 조건
+    # 제약 조건 (exam_id가 NULL일 수 있으므로 number만 unique로 변경)
     __table_args__ = (
-        UniqueConstraint('exam_id', 'number', name='uq_question_exam_number'),
+        UniqueConstraint('number', name='uq_question_number'),
     )
     
     # 관계
@@ -73,7 +59,7 @@ class AnswerSheet(Base):
     __tablename__ = "answer_sheet"
     
     id = Column(Integer, primary_key=True, index=True)
-    exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=False)
+    exam_id = Column(Integer, ForeignKey("exam.id", ondelete="CASCADE"), nullable=True)  # 시험 하나만 있다고 가정
     student_code = Column(String(100), nullable=False)  # 학번/학생 식별자 (로그인 계정 아님)
     answer_pdf_path = Column(String, nullable=True)  # 답안지 PDF 경로
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
@@ -95,7 +81,7 @@ class Answer(Base):
     # 학생이 실제로 작성한 서술형 답변
     answer_text = Column(Text, nullable=False)
     raw_score = Column(Numeric(5, 2), nullable=True)  # LLM JSON에서 추출한 점수
-    
+    max_score = Column(Numeric(5, 2), nullable=True)  # 최대 점수
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     

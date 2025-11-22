@@ -1,27 +1,7 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from datetime import datetime, date
 from typing import Optional, List, Dict, Any
 from decimal import Decimal
-
-class UserBase(BaseModel):
-    user_id: str
-    email: EmailStr
-    username: str
-
-class UserCreate(UserBase):
-    password: str
-
-class UserResponse(UserBase):
-    id: int
-    password: str  # 해시된 비밀번호 포함
-    created_at: Optional[datetime] = None
-    
-    class Config:
-        from_attributes = True
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
 
 class DocumentResponse(BaseModel):
     id: int
@@ -82,7 +62,6 @@ class AnswerSheetCreate(AnswerSheetBase):
 class AnswerSheetResponse(AnswerSheetBase):
     id: int
     exam_id: int
-    submitted_at: datetime
     created_at: datetime
     updated_at: datetime
     
@@ -93,6 +72,7 @@ class AnswerSheetResponse(AnswerSheetBase):
 class AnswerBase(BaseModel):
     answer_text: str
     raw_score: Optional[Decimal] = None  # LLM JSON에서 추출한 점수
+    max_score: Optional[Decimal] = None  # 최대 점수
 
 class AnswerCreate(AnswerBase):
     answer_sheet_id: int

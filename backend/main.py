@@ -1,19 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-import os
 
 from database import engine, Base
-from routers import documents, exams, question_papers, answer_sheets, analysis
+from routers import exams, question_papers, answer_sheets, analysis
 
 # 데이터베이스 테이블 생성
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="REALThon API", version="1.0.0")
 
-# 정적 파일 서빙 (업로드된 PDF 접근용)
-if os.path.exists("uploads"):
-    app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+# 정적 파일 서빙 제거 (PDF 저장 안함)
 
 # CORS 설정
 app.add_middleware(
@@ -25,7 +21,6 @@ app.add_middleware(
 )
 
 # 라우터 등록
-app.include_router(documents.router)
 app.include_router(exams.router)
 app.include_router(question_papers.router)
 app.include_router(answer_sheets.router)

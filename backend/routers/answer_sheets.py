@@ -1,11 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
+from fastapi import APIRouter, Depends, HTTPException, status, Form
 from sqlalchemy.orm import Session
 from typing import List
 import json
 
 from models import Exam, AnswerSheet, Answer, Question
 from schemas import AnswerExtractionResult
-from utils.pdf import save_uploaded_pdf, is_allowed_file
 from dependencies import get_db
 
 router = APIRouter(prefix="/answer-sheets", tags=["답안지"])
@@ -13,91 +12,68 @@ router = APIRouter(prefix="/answer-sheets", tags=["답안지"])
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
 async def upload_answer_sheets(
-    exam_id: int = Form(...),
-    files: List[UploadFile] = File(...),
-    extraction_results_json: str = Form(None),
+    exam_id: int = Form(None),  # 시험 하나만 있다고 가정하므로 선택적
+    extraction_results_json: str = Form(...),
     db: Session = Depends(get_db)
 ):
     """
-    여러개의 답안지 PDF 업로드, 하나씩 LLM 추출 결과(학생별 문항별 답안, 점수) JSON 받아서 Answer에 저장, 완료한 pdf 압축저장 (인증 없음)
+    여러개의 답안지 LLM 추출 결과(학생별 문항별 답안, 점수) JSON 받아서 Answer에 저장 (인증 없음)
+    PDF 파일은 저장하지 않음
     
-    - files: 답안지 PDF 파일들 (여러 개)
     - extraction_results_json: LLM 추출 결과들 (JSON 배열 문자열)
+    - exam_id: 시험 ID (선택사항, 시험 하나만 있다고 가정)
     """
     try:
-        # 시험 존재 확인
-        exam = db.query(Exam).filter(Exam.id == exam_id).first()
-        if not exam:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="시험을 찾을 수 없습니다."
-            )
+        # 시험 존재 확인 (exam_id가 있으면 확인, 없으면 None)
+        exam = None
+        if exam_id:
+            exam = db.query(Exam).filter(Exam.id == exam_id).first()
+            if not exam:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="시험을 찾을 수 없습니다."
+                )
         
         # LLM 추출 결과 파싱
         extraction_results = []
-        if extraction_results_json:
-            try:
-                results_list = json.loads(extraction_results_json)
-                extraction_results = [AnswerExtractionResult(**result) for result in results_list]
-            except Exception as e:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"LLM 추출 결과 JSON 파싱 실패: {str(e)}"
-                )
-        
-        # 파일과 추출 결과 개수 확인
-        if len(extraction_results) != len(files):
+        try:
+            results_list = json.loads(extraction_results_json)
+            extraction_results = [AnswerExtractionResult(**result) for result in results_list]
+        except Exception as e:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"PDF 파일 개수({len(files)})와 추출 결과 개수({len(extraction_results)})가 일치하지 않습니다."
+                detail=f"LLM 추출 결과 JSON 파싱 실패: {str(e)}"
             )
         
         uploaded_sheets = []
         
-        # 각 파일 처리
-        for idx, file in enumerate(files):
-            # 파일 확장자 확인
-            if not is_allowed_file(file.filename):
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"파일 '{file.filename}'은 PDF 파일만 업로드 가능합니다."
-                )
+        # 각 추출 결과 처리
+        for idx, extraction_result in enumerate(extraction_results):
             
-            # PDF 저장 (압축 저장)
-            file_info = save_uploaded_pdf(
-                file=file,
-                user_id=None,
-                file_type="answer_sheet"
-            )
-            
-            # 추출 결과 가져오기
-            extraction_result = extraction_results[idx] if idx < len(extraction_results) else None
-            
-            # AnswerSheet 생성 또는 조회
+            # AnswerSheet 생성 또는 조회 (exam_id 없이 student_code만으로)
+            student_code = extraction_result.student_code if extraction_result else f"student_{idx}"
             answer_sheet = db.query(AnswerSheet).filter(
-                AnswerSheet.exam_id == exam_id,
-                AnswerSheet.student_code == extraction_result.student_code if extraction_result else None
+                AnswerSheet.student_code == student_code
             ).first()
             
             if not answer_sheet:
                 # 새 답안지 생성
                 answer_sheet = AnswerSheet(
                     exam_id=exam_id,
-                    student_code=extraction_result.student_code if extraction_result else f"student_{idx}",
-                    answer_pdf_path=file_info["filepath"]
+                    student_code=student_code,
+                    answer_pdf_path=None  # PDF 저장 안함
                 )
                 db.add(answer_sheet)
                 db.flush()  # ID를 얻기 위해 flush
             else:
                 # 기존 답안지 업데이트
-                answer_sheet.answer_pdf_path = file_info["filepath"]
+                answer_sheet.exam_id = exam_id
             
-            # LLM 추출 결과가 있으면 Answer에 저장
+            # LLM 추출 결과로 Answer에 저장
             if extraction_result:
                 for answer_item in extraction_result.answers:
-                    # 문항 조회
+                    # 문항 조회 (exam_id 없이 number만으로)
                     question = db.query(Question).filter(
-                        Question.exam_id == exam_id,
                         Question.number == answer_item.question_number
                     ).first()
                     
@@ -125,15 +101,14 @@ async def upload_answer_sheets(
                         db.add(db_answer)
             
             uploaded_sheets.append({
-                "student_code": extraction_result.student_code if extraction_result else f"student_{idx}",
-                "pdf_path": file_info["filepath"],
-                "answers_count": len(extraction_result.answers) if extraction_result else 0
+                "student_code": extraction_result.student_code,
+                "answers_count": len(extraction_result.answers)
             })
         
         db.commit()
         
         return {
-            "message": f"{len(files)}개의 답안지가 업로드되었습니다.",
+            "message": f"{len(extraction_results)}개의 답안지 정보가 저장되었습니다.",
             "exam_id": exam_id,
             "uploaded_sheets": uploaded_sheets
         }
