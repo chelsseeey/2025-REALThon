@@ -4,9 +4,10 @@ from openai import OpenAI
 import base64
 import mimetypes
 import os
+import time
+from openai import RateLimitError
 
 # ---------- 설정 ----------
-JSON_PATH = "problem.json"       # 답안 JSON 파일 경로
 QUESTION_IMAGE_PATH = "문제지.png"   # 문제지 이미지
 RUBRIC_IMAGE_PATH = "채점기준.png"   # 채점 기준 이미지
 
@@ -14,9 +15,13 @@ SIM_THRESHOLD = 0.90               # 클러스터링 기준 유사도
 EMBED_MODEL = "text-embedding-3-large"
 CLUSTER_SUMMARY_MODEL = "gpt-4o-mini"
 MAX_SAMPLES_PER_CLUSTER = 10       # 클러스터당 요약에 쓸 최대 샘플 수
+
+# 클러스터링을 수행할 문제 번호들 (파일명: problem{n}_answers.json)
+PROBLEM_NUMS = [1, 2, 3]
 # --------------------------
 
 client = OpenAI(api_key="")
+
 
 def encode_image_to_data_url(path: str) -> str:
     mime = mimetypes.guess_type(path)[0] or "image/png"
@@ -47,14 +52,14 @@ def exam_to_text(exam: dict) -> str:
     return "\n".join(pieces)
 
 
-def load_exams(json_path: str):
+def load_exams(json_path: str, problem_num: int):
     """
-    problem_1.json 구조:
+    problem{n}_answers.json 구조:
     {
       "answers": [
         {
           "student_id": "...",
-          "problem_1_answer": { ... }
+          "problem_{n}_answer": { ... }
         },
         ...
       ]
@@ -74,10 +79,11 @@ def load_exams(json_path: str):
         answers = data["answers"]
         exam_ids = [ans["student_id"] for ans in answers]
         exams = []
+        problem_key = f"problem_{problem_num}_answer"
         for ans in answers:
             exam = {
                 "exam_id": ans["student_id"],
-                "problems": [ans["problem_1_answer"]],
+                "problems": [ans[problem_key]],
             }
             exams.append(exam)
         texts = [exam_to_text(exam) for exam in exams]
@@ -227,6 +233,7 @@ def describe_clusters_with_openai(
 인지적 진단, 답안 패턴, 정량적 분포를 해석해야 합니다.
 """
 
+        # ⚠️ 요구사항: 답안 생성 로직 프롬프트(user_text)는 수정하지 않음
         user_text = f"""
 다음은 1번 문제에 대한 답안을 임베딩 유사도로 클러스터링한 결과 중,
 클러스터 {idx}에 대한 정보입니다.
@@ -307,41 +314,69 @@ def describe_clusters_with_openai(
 - JSON 이외의 다른 텍스트는 절대 출력하지 마세요.
 """
 
-        resp = client.chat.completions.create(
-            model=model,
-            response_format={"type": "json_object"},
-            messages=[
-                {"role": "system", "content": system_msg},
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "text", "text": user_text},
+        # Rate Limit 대응: 재시도 로직
+        max_retries = 5
+        retry_delay = 2  # 초
+        
+        for attempt in range(max_retries):
+            try:
+                resp = client.chat.completions.create(
+                    model=model,
+                    response_format={"type": "json_object"},
+                    messages=[
+                        {"role": "system", "content": system_msg},
                         {
-                            "type": "image_url",
-                            "image_url": {"url": question_data_url},
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {"url": rubric_data_url},
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": user_text},
+                                {
+                                    "type": "image_url",
+                                    "image_url": {"url": question_data_url},
+                                },
+                                {
+                                    "type": "image_url",
+                                    "image_url": {"url": rubric_data_url},
+                                },
+                            ],
                         },
                     ],
-                },
-            ],
-            max_tokens=900,
-        )
+                    max_tokens=900,
+                )
 
-        content = resp.choices[0].message.content
-        summary_obj = json.loads(content)
-        cluster_summaries.append(summary_obj)
+                content = resp.choices[0].message.content
+                summary_obj = json.loads(content)
+                cluster_summaries.append(summary_obj)
 
-        print(f"\n[Cluster {idx}] 특징 요약 완료")
+                print(f"\n[Cluster {idx}] 특징 요약 완료")
+                
+                # 다음 클러스터 처리 전 짧은 대기 (Rate Limit 방지)
+                if idx < len(clusters):
+                    time.sleep(1)
+                
+                break  # 성공하면 재시도 루프 탈출
+                
+            except RateLimitError as e:
+                if attempt < max_retries - 1:
+                    wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
+                    print(f"\n⚠️  Rate Limit 도달. {wait_time}초 후 재시도... (시도 {attempt + 1}/{max_retries})")
+                    time.sleep(wait_time)
+                else:
+                    print(f"\n❌ [Cluster {idx}] Rate Limit 에러: 최대 재시도 횟수 초과")
+                    raise  # 최대 재시도 후에도 실패하면 에러 발생
 
     return cluster_summaries
 
 
-def main():
+def run_for_problem(problem_num: int):
+    json_path = f"problem{problem_num}_answers.json"
+    if not os.path.exists(json_path):
+        print(f"[문제 {problem_num}] 파일 없음: {json_path} (건너뜀)")
+        return
+
+    print(f"\n========== 문제 {problem_num} ({json_path}) ==========")
+
     # 1) JSON 로드 + 텍스트 만들기
-    exam_ids, texts = load_exams(JSON_PATH)
+    exam_ids, texts = load_exams(json_path, problem_num)
     print(f"{len(exam_ids)}개 exam 로드 완료")
 
     # 2) 임베딩
@@ -374,12 +409,16 @@ def main():
     )
 
     # 7) 결과 저장
-    summary_path = "cluster_analysis.json"
+    summary_path = f"cluster_analysis_problem{problem_num}.json"
     with open(summary_path, "w", encoding="utf-8") as f:
         json.dump(cluster_summaries, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ 클러스터 분석을 '{summary_path}' 파일에 저장했습니다.\n")
-    print(json.dumps(cluster_summaries, ensure_ascii=False, indent=2))
+    print(f"\n✅ 문제 {problem_num} 클러스터 분석을 '{summary_path}' 파일에 저장했습니다.\n")
+
+
+def main():
+    for p in PROBLEM_NUMS:
+        run_for_problem(p)
 
 
 if __name__ == "__main__":
