@@ -15,7 +15,6 @@
   <body
     class="bg-slate-50 text-slate-800 h-screen flex flex-col overflow-hidden"
   >
-    <!-- 헤더 (z-index 높임) -->
     <header
       class="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-8 shadow-sm z-50 relative"
     >
@@ -31,7 +30,6 @@
         <h1 class="text-xl font-bold text-slate-800">학급 전체 오답 분석</h1>
       </div>
 
-      <!-- 과목 선택 드롭다운 영역 -->
       <div class="relative group h-full flex items-center cursor-pointer">
         <div
           class="flex items-center gap-3 px-3 py-2 rounded-lg group-hover:bg-slate-50 transition-colors"
@@ -52,16 +50,14 @@
           ></i>
         </div>
 
-        <!-- 추가된 드롭다운 메뉴 -->
         <div
-          class="absolute top-full right-0 w-48 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-2 overflow-hidden"
+          class="absolute top-full right-0 w-48 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-2 overflow-hidden z-50"
         >
           <div class="py-1">
             <div class="px-4 py-2 bg-slate-50 border-b border-slate-100">
               <span class="text-xs font-bold text-slate-400">내 강의 목록</span>
             </div>
 
-            <!-- 과목 리스트 -->
             <a
               href="#"
               onclick="changeSubject('선형대수학')"
@@ -110,7 +106,6 @@
 
     <main class="flex-1 overflow-y-auto p-6 md:p-10 relative z-0">
       <div class="max-w-7xl mx-auto">
-        <!-- STEP 1: 파일 업로드 -->
         <section id="upload-section" class="mb-12 transition-all duration-500">
           <div
             class="bg-white rounded-2xl shadow-sm border border-slate-200 p-10 text-center"
@@ -202,13 +197,11 @@
           </div>
         </section>
 
-        <!-- 로딩 화면 -->
         <section id="loading-section" class="hidden py-32 text-center fade-in">
           <div class="loader mx-auto mb-6"></div>
           <h3 class="text-xl font-bold text-slate-700">답안 정밀 분석 중...</h3>
         </section>
 
-        <!-- STEP 2: 문항 리스트 (결과) -->
         <section id="result-section" class="hidden fade-in">
           <div class="flex justify-between items-end mb-6">
             <div>
@@ -230,38 +223,33 @@
             </div>
           </div>
 
-          <!-- 문항 카드 그리드 -->
           <div
             id="questions-grid"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-          >
-            <!-- JS로 카드 생성됨 -->
-          </div>
+          ></div>
         </section>
       </div>
     </main>
 
-    <!-- 상세 보고서 모달 (화면 위 창) -->
     <div
       id="report-modal"
       class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300"
     >
       <div
-        class="bg-white w-full max-w-5xl h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden transform scale-95 transition-transform duration-300"
+        class="bg-white w-full max-w-6xl h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden transform scale-95 transition-transform duration-300"
         id="modal-content"
       >
-        <!-- 모달 헤더 -->
         <div
-          class="flex justify-between items-center px-8 py-5 border-b border-slate-100 bg-slate-50"
+          class="flex justify-between items-center px-8 py-4 border-b border-slate-100 bg-slate-50"
         >
-          <div>
+          <div class="flex items-center gap-3">
             <span
-              class="inline-block bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded mb-1"
+              class="bg-indigo-600 text-white text-sm font-bold px-3 py-1 rounded-full"
               id="modal-q-num"
               >Q1</span
             >
-            <h2 class="text-xl font-bold text-slate-800" id="modal-title">
-              행렬의 곱셈과 역행렬
+            <h2 class="text-lg font-bold text-slate-800" id="modal-title">
+              문항 상세 분석
             </h2>
           </div>
           <button
@@ -272,95 +260,137 @@
           </button>
         </div>
 
-        <!-- 모달 바디 (스크롤 영역) -->
         <div class="flex-1 overflow-y-auto p-8 bg-white">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 h-full">
-            <!-- 왼쪽: 문제 정보 & 점수 히스토그램 -->
-            <div class="flex flex-col gap-8">
-              <!-- 문제 텍스트 박스 -->
-              <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
-                <h4
-                  class="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide"
-                >
-                  Question Text
-                </h4>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+            <div class="flex flex-col">
+              <h4
+                class="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide"
+              >
+                <i class="fas fa-question-circle mr-1"></i> Question
+              </h4>
+              <div
+                class="bg-slate-50 p-6 rounded-xl border border-slate-100 flex-1"
+              >
                 <p
                   class="text-slate-700 font-serif text-lg leading-relaxed"
                   id="modal-q-text"
-                >
-                  <!-- 문제 텍스트 -->
-                </p>
-              </div>
-
-              <!-- 점수 히스토그램 차트 -->
-              <div
-                class="bg-white border border-slate-100 p-6 rounded-xl shadow-sm flex-1 min-h-[300px]"
-              >
-                <!-- 수정된 부분: 평균 점수 아래에 배점 추가 -->
-                <h4
-                  class="text-sm font-bold text-slate-500 mb-4 uppercase tracking-wide flex justify-between items-end"
-                >
-                  <span>Score Histogram</span>
-                  <div class="text-right">
-                    <span
-                      class="block text-xs text-indigo-600 font-bold"
-                      id="modal-avg-score"
-                      >평균: 0점</span
-                    >
-                    <span
-                      class="block text-xs text-slate-400 mt-1"
-                      id="modal-max-score"
-                      >배점: 0점</span
-                    >
-                  </div>
-                </h4>
-                <div class="relative h-64 w-full">
-                  <canvas id="detail-chart"></canvas>
-                </div>
+                ></p>
               </div>
             </div>
 
-            <!-- 오른쪽: 상세 오답 분석 (Report 형식) -->
-            <div class="flex flex-col gap-6">
-              <div class="border-l-4 border-red-400 pl-6 py-2">
-                <h4
-                  class="text-lg font-bold text-slate-800 mb-3 flex items-center"
+            <div class="flex flex-col">
+              <h4
+                class="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide flex justify-between"
+              >
+                <span
+                  ><i class="fas fa-chart-bar mr-1"></i> Score
+                  Distribution</span
                 >
-                  <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
-                  학생들이 많이 실수한 부분
-                </h4>
-                <ul
-                  class="list-disc list-outside text-slate-600 space-y-2 ml-4 text-sm"
-                  id="analysis-mistakes"
+                <span class="text-indigo-600" id="modal-avg-score"
+                  >평균: -점</span
                 >
-                  <!-- 리스트 아이템 -->
-                </ul>
+              </h4>
+              <div
+                class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm h-64 w-full relative"
+              >
+                <canvas id="detail-chart"></canvas>
               </div>
+            </div>
 
-              <div class="border-l-4 border-yellow-400 pl-6 py-2">
-                <h4
-                  class="text-lg font-bold text-slate-800 mb-3 flex items-center"
-                >
-                  <i class="fas fa-eraser text-yellow-500 mr-2"></i>
-                  많이 누락된 내용
-                </h4>
-                <ul
-                  class="list-disc list-outside text-slate-600 space-y-2 ml-4 text-sm"
-                  id="analysis-missing"
-                >
-                  <!-- 리스트 아이템 -->
-                </ul>
+            <div class="flex flex-col">
+              <h4
+                class="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide"
+              >
+                <i class="fas fa-chart-pie mr-1"></i> Answer Clusters
+              </h4>
+              <div
+                class="bg-white border border-slate-100 p-6 rounded-xl shadow-sm flex flex-col items-center justify-center h-full min-h-[300px]"
+              >
+                <div class="h-64 w-full relative">
+                  <canvas id="cluster-pie-chart"></canvas>
+                </div>
+                <p class="text-xs text-slate-400 mt-4 text-center">
+                  <i class="fas fa-mouse-pointer mr-1"></i> 그래프 영역을
+                  클릭하여 상세 분석을 확인하세요
+                </p>
               </div>
+            </div>
 
-              <div class="border-l-4 border-blue-400 pl-6 py-2">
-                <h4
-                  class="text-lg font-bold text-slate-800 mb-3 flex items-center"
+            <div class="flex flex-col">
+              <h4
+                class="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide flex justify-between items-center"
+              >
+                <span
+                  ><i class="fas fa-microscope mr-1"></i> Cluster Details</span
                 >
-                  <i class="fas fa-quote-right text-blue-500 mr-2"></i>
-                  잘못 사용된 키워드
-                </h4>
-                <div class="flex flex-wrap gap-2" id="analysis-keywords">
-                  <!-- 키워드 태그 -->
+                <span
+                  id="selected-cluster-badge"
+                  class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded font-bold"
+                  >선택 안됨</span
+                >
+              </h4>
+
+              <div
+                id="cluster-detail-container"
+                class="bg-white border border-slate-100 rounded-xl shadow-sm p-6 flex-1 overflow-y-auto"
+              >
+                <div
+                  id="cluster-placeholder"
+                  class="h-full flex flex-col items-center justify-center text-slate-400"
+                >
+                  <i class="fas fa-search text-4xl mb-3 opacity-20"></i>
+                  <p>왼쪽 그래프에서 클러스터를 선택해주세요.</p>
+                </div>
+
+                <div id="cluster-content" class="hidden space-y-6">
+                  <div>
+                    <h5
+                      class="text-sm font-bold text-red-500 mb-2 flex items-center"
+                    >
+                      <i class="fas fa-exclamation-triangle mr-2"></i
+                      >Misconceptions
+                    </h5>
+                    <ul
+                      id="detail-misconceptions"
+                      class="list-disc list-inside text-slate-600 text-sm space-y-1 bg-red-50 p-3 rounded-lg border border-red-100"
+                    ></ul>
+                  </div>
+
+                  <div>
+                    <h5
+                      class="text-sm font-bold text-orange-500 mb-2 flex items-center"
+                    >
+                      <i class="fas fa-unlink mr-2"></i>Logical Gaps
+                    </h5>
+                    <ul
+                      id="detail-gaps"
+                      class="list-disc list-inside text-slate-600 text-sm space-y-1 bg-orange-50 p-3 rounded-lg border border-orange-100"
+                    ></ul>
+                  </div>
+
+                  <div>
+                    <h5
+                      class="text-sm font-bold text-blue-500 mb-2 flex items-center"
+                    >
+                      <i class="fas fa-key mr-2"></i>Missing Keywords
+                    </h5>
+                    <div
+                      id="detail-keywords"
+                      class="flex flex-wrap gap-2"
+                    ></div>
+                  </div>
+
+                  <div>
+                    <h5
+                      class="text-sm font-bold text-green-600 mb-2 flex items-center"
+                    >
+                      <i class="fas fa-comment-dots mr-2"></i>Overall Feedback
+                    </h5>
+                    <div
+                      id="detail-summary"
+                      class="text-slate-600 text-sm bg-green-50 p-3 rounded-lg border border-green-100 leading-relaxed"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
