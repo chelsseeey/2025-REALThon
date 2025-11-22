@@ -4,7 +4,7 @@ import json
 import re
 from openai import OpenAI
 
-client = OpenAI(api_key="")
+client = OpenAI(api_key="")  # <- 키 넣기
 
 
 def encode_image(image_path: str) -> str:
@@ -113,11 +113,13 @@ def parse_exam(image_path: str, output_json_path: str | None = None) -> dict:
         q_count = count_subquestions(text)
         total_score += score
 
+        # 🔽 여기에서 raw_text도 같이 저장
         problems_out.append(
             {
                 "problem_index": idx,
                 "question_count": q_count,
                 "score": score,
+                "raw_text": text,  # <- 문제 내용 저장
             }
         )
 
