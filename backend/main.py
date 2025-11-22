@@ -4,18 +4,18 @@ from fastapi.staticfiles import StaticFiles
 import os
 
 from database import engine, Base
-from routers import auth, documents
-
-# 데이터베이스 테이블 생성
+from routers import answer_sheets, answer_key, question_papers  
 Base.metadata.create_all(bind=engine)
-
 app = FastAPI(title="REALThon API", version="1.0.0")
-
-# 정적 파일 서빙 (업로드된 PDF 접근용)
+origins = [
+    "http://localhost:3000",  # 리액트/Next.js 기본 포트
+    "http://localhost:5173",  # Vite(Vue/React) 기본 포트
+    "*"                       # (개발용) 모든 곳에서 허용하려면 이걸 쓰세요
+]
+# 라우터 등록
 if os.path.exists("uploads"):
     app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
-# CORS 설정
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # 모든 origin 허용 (프로덕션에서는 특정 도메인으로 제한)
@@ -23,14 +23,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.include_router(answer_sheets.router)
+app.include_router(answer_key.router)
+app.include_router(question_papers.router)
 
-# 라우터 등록
-app.include_router(auth.router)
-app.include_router(documents.router)
-
-# OAuth2 토큰 URL 설정 (auth 라우터의 /token 엔드포인트 사용)
-from fastapi.security import OAuth2PasswordBearer
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 
 @app.get("/")

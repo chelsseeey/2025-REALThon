@@ -1,0 +1,119 @@
+[
+  {
+    "cluster_index": 1,
+    "cognitive_diagnosis": {
+      "misconceptions": [
+        "다항식의 해를 찾는 과정에서 미분의 개념 혼동",
+        "여러 해를 가진 함수의 특성에 대한 이해 부족"
+      ],
+      "logical_gaps": [
+        "x의 값을 찾기 위한 정리 후 해의 존재 조건 설명 미비",
+        "문제를 풀기 위한 풀이 과정의 단계가 불명확함"
+      ],
+      "missing_keywords": [
+        "계수",
+        "해의 개수",
+        "함수의 성질"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "보통",
+      "approach": "직관적 접근",
+      "error_type": "개념 오류 위주"
+    },
+    "quantitative_metrics": {
+      "num_students": 26,
+      "percentage": 27.7,
+      "relative_length": "기타 그룹에 비해 짧은 편",
+      "expected_score_level": "중~하"
+    },
+    "overall_summary": "클러스터 1의 학생들 대부분은 다항식의 해를 찾기 위한 접근에서 개념 오류가 주를 이루며, 문제 해결 과정에서 중요한 단계가 빠져있고, 서술은 비교적 적당하지만 상대적으로 길이는 짧은 경향을 보인다."
+  },
+  {
+    "cluster_index": 2,
+    "cognitive_diagnosis": {
+      "misconceptions": [
+        "부등식에 대한 이해 부족",
+        "다항식의 근에 대한 오류"
+      ],
+      "logical_gaps": [
+        "근을 구하는 과정에서 해의 개수나 조건 도출이 부족"
+      ],
+      "missing_keywords": [
+        "부등식 해석",
+        "해의 개수"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "보통",
+      "approach": "정석 풀이",
+      "error_type": "개념 오류 위주"
+    },
+    "quantitative_metrics": {
+      "num_students": 38,
+      "percentage": 40.4,
+      "relative_length": "일반적인 답안 길이로, 다른 클러스터와 유사",
+      "expected_score_level": "대략 중~하"
+    },
+    "overall_summary": "클러스터 2는 정석적인 풀이 방식으로 접근하지만, 개념 오류와 부등식 이해 부족이 나타나며, 전체 학생의 약 40.4%를 차지하고 있습니다."
+  },
+  {
+    "cluster_index": 3,
+    "cognitive_diagnosis": {
+      "misconceptions": [
+        "다항식의 근 개수에 대한 이해 부족",
+        "구간의 함수 특성에 대한 오해"
+      ],
+      "logical_gaps": [
+        "문제에서 주어진 부등식의 구간을 찾는 과정에서 중간 단계 생략"
+      ],
+      "missing_keywords": [
+        "극값",
+        "연속성",
+        "부등식의 해와 그래프의 관계"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "구체적",
+      "approach": "정석 풀이",
+      "error_type": "개념 오류 위주"
+    },
+    "quantitative_metrics": {
+      "num_students": 28,
+      "percentage": 29.8,
+      "relative_length": "타 클러스터보다 다소 긴 편",
+      "expected_score_level": "중상 수준의 20~30점"
+    },
+    "overall_summary": "이 클러스터의 학생들은 문제 해결 과정에서 반복적이고 구체적인 접근을 하지만, 개념적 이해 부족으로 인해 오개념과 논리적 결손이 나타나며, 채점 기준에서 중상 수준의 점수를 예상할 수 있다."
+  },
+  {
+    "cluster_index": 4,
+    "cognitive_diagnosis": {
+      "misconceptions": [
+        "주어진 조건에 대한 이해 부족",
+        "함수의 성질에 대한 혼동"
+      ],
+      "logical_gaps": [
+        "계산 과정에서 필요 단계의 누락",
+        "결과 도출 후의 검증 부족"
+      ],
+      "missing_keywords": [
+        "함수의 연속성",
+        "극값",
+        "기하학적 의미"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "보통",
+      "approach": "정석 풀이",
+      "error_type": "개념 오류"
+    },
+    "quantitative_metrics": {
+      "num_students": 2,
+      "percentage": 2.1,
+      "relative_length": "다른 그룹에 비해 평균적인 수준",
+      "expected_score_level": "10~20점 대에 머무를 가능성이 큼"
+    },
+    "overall_summary": "클러스터 4의 학생들은 주어진 문제의 조건 이해와 계산 과정에서 오해가 있으며, 일반적으로 평균적인 길이의 답안을 작성하나 점수는 낮을 것으로 예상된다."
+  }
+]

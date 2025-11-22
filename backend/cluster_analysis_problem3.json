@@ -1,0 +1,86 @@
+[
+  {
+    "cluster_index": 1,
+    "cognitive_diagnosis": {
+      "misconceptions": [
+        "기울기 개념 혼동",
+        "직선 방정식의 해석 오류"
+      ],
+      "logical_gaps": [
+        "문제의 맥락과 조건을 고려하지 않은 결과 도출"
+      ],
+      "missing_keywords": [
+        "직선의 방정식",
+        "기울기",
+        "x와 y의 관계"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "구체적",
+      "approach": "정석 풀이",
+      "error_type": "개념 오류 위주"
+    },
+    "quantitative_metrics": {
+      "num_students": 24,
+      "percentage": 24.5,
+      "relative_length": "평균적으로 짧은 답안으로, 57자의 일관성을 보임",
+      "expected_score_level": "중 수준으로, 40점 만점 중 10~20점대에 머무를 가능성이 큼"
+    },
+    "overall_summary": "이 클러스터는 기울기와 직선 방정식의 개념 혼동이 도드라지며, 정석적인 접근법을 따르되 명확한 논리 전개가 부족하여 중간 정도의 점수를 예상할 수 있다."
+  },
+  {
+    "cluster_index": 2,
+    "cognitive_diagnosis": {
+      "misconceptions": [
+        "기울기 개념 혼동",
+        "수직선 방정식 설정 오류"
+      ],
+      "logical_gaps": [
+        "수직인 직선의 방정식 도출 과정",
+        "최종 방정식 입력 누락"
+      ],
+      "missing_keywords": [
+        "직선의 방정식",
+        "기울기"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "구체적",
+      "approach": "정석 풀이",
+      "error_type": "개념 오류 위주"
+    },
+    "quantitative_metrics": {
+      "num_students": 67,
+      "percentage": 68.4,
+      "relative_length": "평균적 (168.7자 소스)",
+      "expected_score_level": "30점 대 하위"
+    },
+    "overall_summary": "클러스터 2는 기울기와 관련된 오해가 많으며, 정석을 따르긴 하나 핵심 용어들을 누락하는 경향이 있다."
+  },
+  {
+    "cluster_index": 3,
+    "cognitive_diagnosis": {
+      "misconceptions": [],
+      "logical_gaps": [
+        "문제를 해결하기 위한 중간 단계가 명확하지 않음"
+      ],
+      "missing_keywords": [
+        "해석",
+        "함수",
+        "극값"
+      ]
+    },
+    "pattern_characteristics": {
+      "specificity": "추상적",
+      "approach": "우회적 풀이나 일부 정석 풀이 혼합",
+      "error_type": "개념 오류 위주"
+    },
+    "quantitative_metrics": {
+      "num_students": 7,
+      "percentage": 7.1,
+      "relative_length": "모든 답안이 일정한 길이를 유지, 그렇지만 매우 짧음",
+      "expected_score_level": "부분점수 위주로 40점 만점 중 10~20점 대에 머무를 가능성이 큼"
+    },
+    "overall_summary": "클러스터 3의 학생들은 답안 길이가 짧고 추상적인 사고가 두드러지며, 개념적 결함이 있어 낮은 점수가 예상됨."
+  }
+]

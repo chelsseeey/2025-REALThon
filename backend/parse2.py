@@ -2,10 +2,14 @@ import os
 import base64
 import json
 from openai import OpenAI
+from dotenv import load_dotenv
+load_dotenv()
 
+# OpenAI API 키를 환경변수에서 읽어오기
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # 1) 클라이언트 생성
 # 환경 변수에서 API 키를 읽거나, 직접 입력하세요
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", ""))
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 def encode_image(image_path: str) -> str:
     """이미지 파일을 base64 문자열로 인코딩"""

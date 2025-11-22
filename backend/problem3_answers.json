@@ -1,0 +1,3083 @@
+{
+  "total_count": 98,
+  "problem_number": 3,
+  "max_score": 30,
+  "description": "문제 3번 점수가 30점(만점)이 아닌 학생들의 답안",
+  "answers": [
+    {
+      "student_code": "2271001",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271002",
+      "score": 3,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271003",
+      "score": 17,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271004",
+      "score": 10,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271005",
+      "score": 4,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271006",
+      "score": 10,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271007",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271008",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271009",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271010",
+      "score": 23,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271011",
+      "score": 28,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271012",
+      "score": 21,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271013",
+      "score": 25,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271014",
+      "score": 29,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271015",
+      "score": 15,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271016",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271017",
+      "score": 9,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271018",
+      "score": 25,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271019",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271020",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271022",
+      "score": 12,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271023",
+      "score": 21,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271024",
+      "score": 25,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271025",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271026",
+      "score": 21,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271027",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271028",
+      "score": 24,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271029",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271030",
+      "score": 15,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271031",
+      "score": 10,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271032",
+      "score": 12,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271033",
+      "score": 14,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271034",
+      "score": 24,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271035",
+      "score": 6,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271036",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271037",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271038",
+      "score": 12,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271039",
+      "score": 23,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271040",
+      "score": 9,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271041",
+      "score": 24,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271042",
+      "score": 7,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271043",
+      "score": 5,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271044",
+      "score": 14,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271045",
+      "score": 14,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271046",
+      "score": 4,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271047",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271048",
+      "score": 11,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271049",
+      "score": 13,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271050",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271051",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271052",
+      "score": 22,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271053",
+      "score": 13,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271054",
+      "score": 17,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271055",
+      "score": 17,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271056",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271058",
+      "score": 24,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271059",
+      "score": 13,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271060",
+      "score": 20,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271061",
+      "score": 28,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271062",
+      "score": 22,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271063",
+      "score": 21,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271064",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271065",
+      "score": 24,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271066",
+      "score": 17,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271067",
+      "score": 29,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271068",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271069",
+      "score": 4,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271070",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271071",
+      "score": 5,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271072",
+      "score": 13,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271073",
+      "score": 4,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271074",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271075",
+      "score": 27,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271076",
+      "score": 13,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271077",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271078",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271079",
+      "score": 4,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271080",
+      "score": 3,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271081",
+      "score": 11,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271082",
+      "score": 18,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271083",
+      "score": 8,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271084",
+      "score": 6,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271085",
+      "score": 12,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271086",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271087",
+      "score": 6,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271088",
+      "score": 24,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271089",
+      "score": 8,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271090",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271091",
+      "score": 2,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271092",
+      "score": 17,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271093",
+      "score": 28,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271094",
+      "score": 25,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271095",
+      "score": 23,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271096",
+      "score": 0,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271097",
+      "score": 26,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271098",
+      "score": 15,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271099",
+      "score": 29,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "latex": "\\frac{5}{3}x + 8 = -\\frac{3}{4}x + 8",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "x = 0",
+                "latex": "x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271100",
+      "score": 16,
+      "problem_3_answer": {
+        "problem_number": 3,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "text",
+                "value": "주어진 직선의 기울기 m = \\frac{5}{3}",
+                "confidence": 0.9
+              },
+              {
+                "index": 1,
+                "type": "text",
+                "value": "수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4}",
+                "confidence": 0.9
+              },
+              {
+                "index": 2,
+                "type": "text",
+                "value": "수직인 직선의 방정식 y = -\\frac{3}{4}x + 3 + 5 = y = -\\frac{3}{4}x + 8",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

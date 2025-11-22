@@ -1,0 +1,3943 @@
+{
+  "total_count": 94,
+  "problem_number": 1,
+  "max_score": 40,
+  "description": "문제 1번 점수가 40점(만점)이 아닌 학생들의 답안",
+  "answers": [
+    {
+      "student_code": "2271001",
+      "score": 3,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271002",
+      "score": 26,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271003",
+      "score": 2,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271004",
+      "score": 35,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271005",
+      "score": 3,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271006",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271007",
+      "score": 15,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271008",
+      "score": 27,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271009",
+      "score": 38,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271010",
+      "score": 0,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271011",
+      "score": 28,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271012",
+      "score": 2,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271013",
+      "score": 9,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271014",
+      "score": 1,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271015",
+      "score": 27,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271016",
+      "score": 16,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271017",
+      "score": 2,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271018",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271019",
+      "score": 30,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271020",
+      "score": 38,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271021",
+      "score": 36,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271022",
+      "score": 20,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271023",
+      "score": 32,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271024",
+      "score": 34,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271025",
+      "score": 38,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271026",
+      "score": 31,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271027",
+      "score": 26,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271028",
+      "score": 2,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271029",
+      "score": 11,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271030",
+      "score": 5,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271031",
+      "score": 16,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271032",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271033",
+      "score": 4,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271034",
+      "score": 24,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271035",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271036",
+      "score": 37,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271038",
+      "score": 22,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271039",
+      "score": 34,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271040",
+      "score": 3,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271041",
+      "score": 31,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271043",
+      "score": 34,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271044",
+      "score": 9,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271045",
+      "score": 24,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271046",
+      "score": 2,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271047",
+      "score": 29,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271048",
+      "score": 16,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271049",
+      "score": 17,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271051",
+      "score": 6,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271052",
+      "score": 32,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271053",
+      "score": 5,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271054",
+      "score": 0,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": true,
+            "contents": []
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271055",
+      "score": 24,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271057",
+      "score": 20,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271058",
+      "score": 30,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271059",
+      "score": 35,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271060",
+      "score": 22,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271062",
+      "score": 26,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271063",
+      "score": 9,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271064",
+      "score": 15,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271066",
+      "score": 33,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271067",
+      "score": 19,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271068",
+      "score": 18,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271069",
+      "score": 24,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271070",
+      "score": 34,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271071",
+      "score": 7,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271072",
+      "score": 37,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271073",
+      "score": 3,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271074",
+      "score": 29,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271075",
+      "score": 22,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271076",
+      "score": 28,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271077",
+      "score": 1,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271078",
+      "score": 20,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271079",
+      "score": 32,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271080",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271081",
+      "score": 34,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271082",
+      "score": 14,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271083",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271084",
+      "score": 32,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271085",
+      "score": 20,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271086",
+      "score": 2,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271087",
+      "score": 5,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271088",
+      "score": 32,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271089",
+      "score": 1,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271090",
+      "score": 36,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271091",
+      "score": 38,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271092",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271093",
+      "score": 8,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271094",
+      "score": 34,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271095",
+      "score": 30,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271096",
+      "score": 25,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271097",
+      "score": 16,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271098",
+      "score": 36,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              },
+              {
+                "index": 4,
+                "type": "equation",
+                "raw": "0 < p < 1",
+                "latex": "0 < p < 1",
+                "confidence": 0.95
+              },
+              {
+                "index": 5,
+                "type": "equation",
+                "raw": "0 < x < p-1 \\ 구간 : f(x) > x",
+                "latex": "0 < x < p-1 \\ \\text{구간 : } f(x) > x",
+                "confidence": 0.9
+              },
+              {
+                "index": 6,
+                "type": "equation",
+                "raw": "p-1 < x < 1 \\ 구간 : f(x) < x",
+                "latex": "p-1 < x < 1 \\ \\text{구간 : } f(x) < x",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271099",
+      "score": 21,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 2,
+                "type": "equation",
+                "raw": "x(x^2 - px + p - 1) = 0",
+                "latex": "x(x^2 - px + p - 1) = 0",
+                "confidence": 0.95
+              },
+              {
+                "index": 3,
+                "type": "equation",
+                "raw": "x = 0, 1, p-1",
+                "latex": "x = 0, 1, p-1",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "student_code": "2271100",
+      "score": 14,
+      "problem_1_answer": {
+        "problem_number": 1,
+        "subparts": [
+          {
+            "label": "a",
+            "is_blank": false,
+            "contents": [
+              {
+                "index": 0,
+                "type": "equation",
+                "raw": "x^3 - px^2 + px = x",
+                "latex": "x^3 - px^2 + px = x",
+                "confidence": 0.95
+              },
+              {
+                "index": 1,
+                "type": "equation",
+                "raw": "x^3 - px^2 + (p-1)x = 0",
+                "latex": "x^3 - px^2 + (p-1)x = 0",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
