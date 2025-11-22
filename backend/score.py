@@ -2,6 +2,7 @@ import os
 import sys
 import base64
 import json
+import argparse
 import glob
 from pathlib import Path
 from decimal import Decimal
@@ -142,6 +143,9 @@ def save_to_db(result: dict, db) -> dict:
         
         # Answer에 저장
         saved_count = 0
+        updated_count = 0
+        skipped_count = 0
+        
         for answer_item in extraction_result.answers:
             # 문항 조회
             question = db.query(Question).filter(
@@ -149,6 +153,8 @@ def save_to_db(result: dict, db) -> dict:
             ).first()
             
             if not question:
+                print(f"    ⚠️ 문항 {answer_item.question_number}번이 DB에 없어 스킵합니다. (문제지를 먼저 업로드하세요)", file=sys.stderr)
+                skipped_count += 1
                 continue  # 문항이 없으면 스킵
             
             # 기존 답변 확인
@@ -161,6 +167,7 @@ def save_to_db(result: dict, db) -> dict:
                 # 기존 답변 업데이트
                 existing_answer.answer_text = answer_item.answer_text
                 existing_answer.raw_score = Decimal(str(answer_item.score)) if answer_item.score else None
+                updated_count += 1
             else:
                 # 새 답변 생성
                 db_answer = Answer(
@@ -172,24 +179,32 @@ def save_to_db(result: dict, db) -> dict:
                 db.add(db_answer)
                 saved_count += 1
         
+        if skipped_count > 0:
+            print(f"    ⚠️ {skipped_count}개 답변이 문항이 없어 저장되지 않았습니다.", file=sys.stderr)
+        if updated_count > 0:
+            print(f"    ℹ️ {updated_count}개 답변이 업데이트되었습니다.", file=sys.stderr)
+        
         db.commit()
-        return {"success": True, "student_code": student_code, "saved_count": saved_count}
+        return {
+            "success": True, 
+            "student_code": student_code, 
+            "saved_count": saved_count,
+            "updated_count": updated_count,
+            "skipped_count": skipped_count
+        }
     
     except Exception as e:
         db.rollback()
         return {"success": False, "error": str(e)}
 
 
+# ... (save_to_db 함수 정의 아래) ...
+
 if __name__ == "__main__":
-    # 점수 폴더의 모든 png 파일을 찾기
-    score_folder = "점수"
-    image_files = sorted(glob.glob(os.path.join(score_folder, "*.png")))
-    
-    if not image_files:
-        print(f"'{score_folder}' 폴더에 PNG 파일이 없습니다.")
-        exit(1)
-    
-    print(f"{len(image_files)}개의 이미지 파일을 찾았습니다.")
+    parser = argparse.ArgumentParser(description="점수표 이미지들을 분석하고 DB에 저장합니다.")
+    # 점수표 파일 경로 리스트를 1개 이상 필수로 받습니다.
+    parser.add_argument("score_files", nargs='+', help="점수표 이미지 파일 경로 리스트 (다중 파일)")
+    args = parser.parse_args()
     
     # DB 세션 생성
     db = SessionLocal()
@@ -198,9 +213,16 @@ if __name__ == "__main__":
     error_count = 0
     
     try:
-        for idx, image_path in enumerate(image_files, 1):
+        # glob 대신 인수로 받은 파일 리스트(args.score_files)를 사용
+        for image_path in args.score_files:
             filename = Path(image_path).name
-            print(f"\n[{idx}/{len(image_files)}] 처리 중: {filename}")
+            
+            if not os.path.exists(image_path):
+                print(f"\n⚠️ 경고: '{filename}' 파일을 찾을 수 없어 건너뜁니다.")
+                error_count += 1
+                continue
+
+            print(f"\n[처리 중] {filename}")
             
             try:
                 # 이미지 파싱
@@ -210,7 +232,17 @@ if __name__ == "__main__":
                 # DB에 저장
                 save_result = save_to_db(result, db)
                 if save_result["success"]:
-                    print(f" DB 저장 완료: {save_result['saved_count']}개 답변 저장")
+                    saved = save_result.get('saved_count', 0)
+                    updated = save_result.get('updated_count', 0)
+                    skipped = save_result.get('skipped_count', 0)
+                    
+                    if saved > 0 or updated > 0:
+                        msg = f" DB 저장 완료: {saved}개 새로 저장"
+                        if updated > 0:
+                            msg += f", {updated}개 업데이트"
+                        print(msg)
+                    else:
+                        print(f" DB 저장 완료: 0개 저장 (문항이 DB에 없을 수 있습니다)")
                     success_count += 1
                 else:
                     print(f" DB 저장 실패: {save_result.get('error', 'Unknown error')}")
@@ -219,11 +251,9 @@ if __name__ == "__main__":
             except Exception as e:
                 print(f" 오류: {e}")
                 error_count += 1
-                # 에러가 나도 계속 진행
-        
+                
         print(f"\n{'='*50}")
-        print(f"처리 완료: 성공 {success_count}개, 실패 {error_count}개")
-        print(f"총 {len(image_files)}개의 시험지 처리 완료")
+        print(f"최종 처리 완료: 성공 {success_count}개, 실패 {error_count}개")
         print(f"{'='*50}")
     
     finally:

@@ -3,12 +3,14 @@ import base64
 import json
 from openai import OpenAI
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # OpenAI API 키를 환경변수에서 읽어오기
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-# 1) 클라이언트 생성
-# 환경 변수에서 API 키를 읽거나, 직접 입력하세요
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_API_KEY 환경변수가 설정되지 않았습니다.")
+
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def encode_image(image_path: str) -> str:
@@ -17,14 +19,29 @@ def encode_image(image_path: str) -> str:
         return base64.b64encode(f.read()).decode("utf-8")
 
 
-# === 여기만 너 상황에 맞게 바꾸면 됨 ===
-student_code = "2271022"  # 학번 (이미지에서 추출하거나 직접 입력)
-image_path = "답안지.png"  # 손글씨 답안 이미지 경로
-# =======================================
+def parse_student_answer_handwriting(image_path: str, student_code: str = None) -> dict:
+    """
+    손글씨 답안지를 파싱하여 JSON 형식으로 반환
+    
+    Args:
+        image_path: 답안지 이미지 경로
+        student_code: 학번 (이미지에서 추출하거나 제공된 값 사용)
+    
+    Returns:
+        {
+            "student_code": string,
+            "answers": [
+                {
+                    "question_number": integer,
+                    "answer_text": string,
+                    "score": integer
+                }
+            ]
+        }
+    """
+    base64_image = encode_image(image_path)
 
-base64_image = encode_image(image_path)
-
-system_prompt = """
+    system_prompt = """
 당신은 손글씨 시험 답안을 JSON 구조로 파싱하는 보조자입니다.
 
 입력: 한 학생의 시험지 답안 이미지
@@ -77,38 +94,52 @@ system_prompt = """
 }
 """
 
-response = client.chat.completions.create(
-    model="gpt-4o",  # 이미지 입력이 가능한 모델
-    messages=[
-        {"role": "system", "content": system_prompt},
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": (
-                        f"이 이미지는 학번 '{student_code}' 학생의 답안지입니다. "
-                        "위에서 정의된 JSON 스키마에 맞게 이 답안지를 파싱해 주세요. "
-                        f"'student_code' 필드에는 반드시 \"{student_code}\" 를 그대로 넣으세요."
-                    ),
-                },
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/png;base64,{base64_image}"
+    # f-string 내부에서 백슬래시를 사용할 수 없으므로 별도 변수로 분리
+    if student_code:
+        code_instruction = f'student_code 필드에는 반드시 "{student_code}" 를 그대로 넣으세요.'
+    else:
+        code_instruction = '이미지에서 학번을 추출하세요.'
+    
+    user_text = (
+        f"이 이미지는 학번 '{student_code or '알 수 없음'}' 학생의 답안지입니다. "
+        "위에서 정의된 JSON 스키마에 맞게 이 답안지를 파싱해 주세요. "
+        f"{code_instruction}"
+    )
+
+    response = client.chat.completions.create(
+        model="gpt-4o",  # 이미지 입력이 가능한 모델
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": user_text},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/png;base64,{base64_image}"
+                        },
                     },
-                },
-            ],
-        },
-    ],
-    response_format={"type": "json_object"},  # JSON 강제
-)
+                ],
+            },
+        ],
+        response_format={"type": "json_object"},  # JSON 강제
+    )
 
-json_text = response.choices[0].message.content
-data = json.loads(json_text)
+    json_text = response.choices[0].message.content
+    data = json.loads(json_text)
+    
+    return data
 
-print(json.dumps(data, ensure_ascii=False, indent=2))
 
-# 필요하면 파일로 저장
-with open("parsed_exam3.json", "w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
+if __name__ == "__main__":
+    # 테스트용
+    student_code = "2271022"
+    image_path = "답안지.png"
+    
+    data = parse_student_answer_handwriting(image_path, student_code)
+    print(json.dumps(data, ensure_ascii=False, indent=2))
+    
+    # 필요하면 파일로 저장
+    with open("parsed_exam3.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)

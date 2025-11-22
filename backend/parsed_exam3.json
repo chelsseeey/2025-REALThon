@@ -3,17 +3,17 @@
   "answers": [
     {
       "question_number": 1,
-      "answer_text": "x^3 - px^2 + px = x  x^3 - px^2 + (p - 1)x = 0  x(x^2 - px + p - 1) = 0  x = 0, 1, p - 1  0 < p < 1  0 < x < p - 1 구간 : f(x) > x  p - 1 < x < 1 구간 : f(x) < x  ∴ β = p - 1",
+      "answer_text": "x^3 - px^2 + px = x x^3 - px^2 + (p-1)x = 0 x (x^2 - px + p-1) = 0 x = 0, 1, p-1 0 < p < 1 0 < x < p-1 구간: f(x) > x p-1 < x < 1 구간: f(x) < x ∴ β = p-1",
       "score": 0
     },
     {
       "question_number": 2,
-      "answer_text": "x^2 + 3(a + k)^2 = 9  \\frac{9}{4} = (3k)^2 - 4(3k^2 - 3) > 0  k^2 < 4, -2 < k < 2",
+      "answer_text": "x^2 + 3 (x+k)^2 = 3 \\frac{p}{4} = (3k)^{\\frac{2}{3}} -4 (3k^{\\frac{2}{3}} -3) > 0 k^2 < 4, -2 < k < 2",
       "score": 0
     },
     {
       "question_number": 3,
-      "answer_text": "주어진 직선의 기울기 m = \\frac{5}{3} 수직인 직선의 기울기 m' = -\\frac{1}{m} = -\\frac{3}{4} 수직인 직선의 방정식 y = -\\frac{3}{4} x + 3 + 5 = y = -\\frac{3}{4} x + 8 \\frac{5}{3} x + 8 = -\\frac{3}{4} x + 8 . x = 0  (0, 8)",
+      "answer_text": "주어진 직선의 기울기 m = \\frac{4}{3} 수직인 직선의 기울기 m' = \\frac{-1}{m} = -\\frac{3}{4} 수직인 직선의 방정식 y = -\\frac{3}{4}x +3 + 5 = y = -\\frac{3}{4}x + 8 \\frac{4}{3}x + 8 = -\\frac{3}{4}x + 8 . x = 0 (0, 8)",
       "score": 0
     }
   ]

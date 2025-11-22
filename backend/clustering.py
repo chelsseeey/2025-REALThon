@@ -201,6 +201,7 @@ def describe_clusters_with_openai(
     stats_per_cluster,
     question_image_path,
     rubric_image_path,
+    problem_num: int = 1,
     model=CLUSTER_SUMMARY_MODEL,
     max_samples_per_cluster=MAX_SAMPLES_PER_CLUSTER,
 ):
@@ -243,7 +244,7 @@ def describe_clusters_with_openai(
 
         # ⚠️ 요구사항: 답안 생성 로직 프롬프트(user_text)는 수정하지 않음
         user_text = f"""
-다음은 번 문제에 대한 답안을 임베딩 유사도로 클러스터링한 결과 중,
+다음은 {problem_num}번 문제에 대한 답안을 임베딩 유사도로 클러스터링한 결과 중,
 클러스터 {idx}에 대한 정보입니다.
 
 [클러스터 {idx} 통계 JSON]
@@ -414,6 +415,7 @@ def run_for_problem(problem_num: int):
         stats_per_cluster,
         QUESTION_IMAGE_PATH,
         RUBRIC_IMAGE_PATH,
+        problem_num=problem_num,
     )
 
     # 7) 결과 저장

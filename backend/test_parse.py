@@ -3,6 +3,7 @@ import sys
 import base64
 import json
 import re
+import argparse
 from decimal import Decimal
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -24,10 +25,48 @@ if not OPENAI_API_KEY:
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
+def pdf_to_image(pdf_path: str) -> bytes:
+    """PDF 파일의 첫 페이지를 PNG 이미지로 변환"""
+    try:
+        import fitz  # PyMuPDF
+        doc = fitz.open(pdf_path)
+        if len(doc) == 0:
+            raise ValueError("PDF 파일이 비어있습니다.")
+        # 첫 페이지를 이미지로 변환
+        page = doc[0]
+        pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))  # 2배 확대
+        img_bytes = pix.tobytes("png")
+        doc.close()
+        return img_bytes
+    except ImportError:
+        # PyMuPDF가 없으면 pdf2image 시도
+        try:
+            from pdf2image import convert_from_path
+            images = convert_from_path(pdf_path, first_page=1, last_page=1)
+            if not images:
+                raise ValueError("PDF에서 이미지를 추출할 수 없습니다.")
+            import io
+            img_byte_arr = io.BytesIO()
+            images[0].save(img_byte_arr, format='PNG')
+            return img_byte_arr.getvalue()
+        except ImportError:
+            raise ImportError("PDF를 이미지로 변환하려면 PyMuPDF 또는 pdf2image가 필요합니다. 'pip install PyMuPDF' 또는 'pip install pdf2image'를 실행하세요.")
+    except Exception as e:
+        raise ValueError(f"PDF를 이미지로 변환하는 중 오류 발생: {str(e)}")
+
+
 def encode_image(image_path: str) -> str:
-    """이미지를 base64 data URL 형태로 인코딩"""
+    """이미지 또는 PDF를 base64 data URL 형태로 인코딩"""
     import mimetypes
     mime_type = mimetypes.guess_type(image_path)[0] or "image/png"
+    
+    # PDF 파일인 경우 이미지로 변환
+    if mime_type == "application/pdf" or image_path.lower().endswith('.pdf'):
+        img_bytes = pdf_to_image(image_path)
+        b64 = base64.b64encode(img_bytes).decode("utf-8")
+        return f"data:image/png;base64,{b64}"
+    
+    # 일반 이미지 파일
     with open(image_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode("utf-8")
     return f"data:{mime_type};base64,{b64}"
@@ -172,23 +211,20 @@ def parse_exam(image_path: str, output_json_path: str | None = None) -> dict:
     return result
 
 
+# ... (parse_exam 함수 정의 아래) ...
+
 if __name__ == "__main__":
-    # 1. 이미지 파일 경로 (확인 필요)
-    img = "문제지.png"  
-    out = "문제지_parsed.json"
+    parser = argparse.ArgumentParser(description="문제지 원본을 분석하고 DB에 저장합니다.")
+    # 문제지 원본 파일 경로 1개를 필수 인수로 받습니다.
+    parser.add_argument("problem_file", help="문제 원본 이미지 파일 경로 (단일 파일)", type=str)
+    args = parser.parse_args()
 
-    if not os.path.exists(img):
-        print(f" 오류: '{img}' 파일이 없습니다. 문제지 이미지를 준비해주세요.")
-        exit(1)
+    if not os.path.exists(args.problem_file):
+        print(f"❌ 오류: '{args.problem_file}' 파일을 찾을 수 없습니다.")
+        sys.exit(1)
 
-    # 2. 파싱 실행 (LLM)
-    print(f" '{img}' 분석 중... (OpenAI API 호출)")
-    parsed_data = parse_exam(img, out)
-    
-    # 3. JSON 결과 출력
-    print("\n--- [LLM 파싱 결과] ---")
-    print(json.dumps(parsed_data, ensure_ascii=False, indent=2))
-    print(f" 파일 저장 완료: {out}")
-
-    # 4. DB 저장 실행
+    # 2. 파싱 실행 (LLM) 및 DB 저장
+    print(f"🔍 '{args.problem_file}' 분석 및 DB 등록 시작...")
+    parsed_data = parse_exam(args.problem_file, "문제지_parsed.json")
     save_questions_to_db(parsed_data)
+    print(f"✅ 문제 등록 완료: 총 {len(parsed_data['problems'])}개 문항.")
