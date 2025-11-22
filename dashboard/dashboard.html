@@ -3,26 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InsightGrade - 학급 오답 통계</title>
-
-    <!-- Tailwind CSS -->
+    <title>InsightGrade - 상세 오답 분석</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- 커스텀 스타일 -->
     <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body
     class="bg-slate-50 text-slate-800 h-screen flex flex-col overflow-hidden"
   >
-    <!-- 헤더 -->
+    <!-- 헤더 (z-index 높임) -->
     <header
-      class="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-8 shadow-sm z-10"
+      class="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-8 shadow-sm z-50 relative"
     >
       <div
         class="flex items-center gap-3 cursor-pointer"
@@ -35,186 +30,344 @@
         </div>
         <h1 class="text-xl font-bold text-slate-800">학급 전체 오답 분석</h1>
       </div>
-      <div class="flex items-center gap-3">
-        <span
-          class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold"
-          >Prof. Mode</span
+
+      <!-- 과목 선택 드롭다운 영역 -->
+      <div class="relative group h-full flex items-center cursor-pointer">
+        <div
+          class="flex items-center gap-3 px-3 py-2 rounded-lg group-hover:bg-slate-50 transition-colors"
         >
-        <span class="text-sm text-slate-500">김교수님</span>
+          <div class="text-right">
+            <span
+              class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider"
+              >Subject</span
+            >
+            <span
+              id="current-subject"
+              class="block text-sm font-bold text-indigo-600"
+              >선형대수학</span
+            >
+          </div>
+          <i
+            class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200 group-hover:rotate-180"
+          ></i>
+        </div>
+
+        <!-- 추가된 드롭다운 메뉴 -->
+        <div
+          class="absolute top-full right-0 w-48 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-2 overflow-hidden"
+        >
+          <div class="py-1">
+            <div class="px-4 py-2 bg-slate-50 border-b border-slate-100">
+              <span class="text-xs font-bold text-slate-400">내 강의 목록</span>
+            </div>
+
+            <!-- 과목 리스트 -->
+            <a
+              href="#"
+              onclick="changeSubject('선형대수학')"
+              class="block px-4 py-3 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors flex justify-between items-center group/item"
+            >
+              선형대수학
+              <i
+                class="fas fa-check text-indigo-600 text-xs opacity-100 check-icon"
+                data-subject="선형대수학"
+              ></i>
+            </a>
+            <a
+              href="#"
+              onclick="changeSubject('공학수학 1')"
+              class="block px-4 py-3 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors flex justify-between items-center group/item"
+            >
+              공학수학 1
+              <i
+                class="fas fa-check text-indigo-600 text-xs opacity-0 check-icon"
+                data-subject="공학수학 1"
+              ></i>
+            </a>
+            <a
+              href="#"
+              onclick="changeSubject('확률과 통계')"
+              class="block px-4 py-3 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors flex justify-between items-center group/item"
+            >
+              확률과 통계
+              <i
+                class="fas fa-check text-indigo-600 text-xs opacity-0 check-icon"
+                data-subject="확률과 통계"
+              ></i>
+            </a>
+
+            <div class="border-t border-slate-100 my-1"></div>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors"
+            >
+              <i class="fas fa-plus-circle mr-2"></i>과목 추가
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
-    <main class="flex-1 overflow-y-auto p-6 md:p-10">
-      <div class="max-w-6xl mx-auto">
+    <main class="flex-1 overflow-y-auto p-6 md:p-10 relative z-0">
+      <div class="max-w-7xl mx-auto">
         <!-- STEP 1: 파일 업로드 -->
         <section id="upload-section" class="mb-12 transition-all duration-500">
           <div
-            class="bg-white rounded-2xl shadow-sm border border-slate-200 p-12 text-center max-w-3xl mx-auto"
+            class="bg-white rounded-2xl shadow-sm border border-slate-200 p-10 text-center"
           >
             <h2 class="text-2xl font-bold text-slate-800 mb-2">
-              학생 답안지 업로드
+              채점 자료 통합 업로드
             </h2>
-            <p class="text-slate-500 mb-8">
-              채점할 학생들의 답안지 PDF 파일들을 선택하거나 드래그하세요.
+            <p class="text-slate-500 mb-10">
+              원본 시험지(PDF)와 학생 답안지(PNG)들을 업로드하면 AI가 문항별로
+              분석합니다.
             </p>
 
-            <!-- [수정됨] id="drop-zone" 추가 -->
             <div
-              id="drop-zone"
-              class="upload-box"
-              onclick="document.getElementById('studentFiles').click()"
+              class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             >
-              <input
-                type="file"
-                id="studentFiles"
-                class="hidden"
-                accept=".pdf"
-                multiple
-              />
-              <div class="relative inline-block pointer-events-none">
-                <!-- pointer-events-none: 아이콘이 드래그 이벤트를 방해하지 않게 함 -->
-                <i
-                  class="fas fa-layer-group text-5xl text-indigo-200 mb-4 transition-colors icon-placeholder"
-                ></i>
-                <span
-                  id="file-count-badge"
-                  class="hidden absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md"
-                  >0</span
+              <div
+                id="blank-drop-zone"
+                class="upload-box"
+                onclick="document.getElementById('blankFile').click()"
+              >
+                <input
+                  type="file"
+                  id="blankFile"
+                  class="hidden"
+                  accept=".pdf"
+                />
+                <div class="relative inline-block pointer-events-none">
+                  <i
+                    class="fas fa-file-pdf text-5xl text-slate-300 mb-4 transition-colors icon-placeholder"
+                  ></i>
+                  <div
+                    id="blank-check"
+                    class="hidden absolute -bottom-2 -right-2 bg-green-500 text-white w-6 h-6 rounded-full flex items-center justify-center shadow-md"
+                  >
+                    <i class="fas fa-check text-xs"></i>
+                  </div>
+                </div>
+                <p class="font-bold text-slate-600 text-lg pointer-events-none">
+                  원본 시험지 (1부)
+                </p>
+                <p
+                  class="text-sm text-slate-400 mt-1 pointer-events-none"
+                  id="blank-label"
                 >
+                  PDF 파일만 가능
+                </p>
               </div>
-              <p class="font-bold text-slate-600 text-lg pointer-events-none">
-                학생 답안지 파일 선택
-              </p>
-              <p
-                class="text-sm text-slate-400 mt-1 pointer-events-none"
-                id="student-label"
+
+              <div
+                id="student-drop-zone"
+                class="upload-box"
+                onclick="document.getElementById('studentFiles').click()"
               >
-                <i class="fas fa-cloud-upload-alt mr-1"></i>여기에 파일을 드래그
-                앤 드롭 하세요
-              </p>
+                <input
+                  type="file"
+                  id="studentFiles"
+                  class="hidden"
+                  accept=".png"
+                  multiple
+                />
+                <div class="relative inline-block pointer-events-none">
+                  <i
+                    class="fas fa-images text-5xl text-indigo-200 mb-4 transition-colors icon-placeholder"
+                  ></i>
+                  <span
+                    id="file-count-badge"
+                    class="hidden absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md"
+                    >0</span
+                  >
+                </div>
+                <p class="font-bold text-slate-600 text-lg pointer-events-none">
+                  학생 답안지 (전체)
+                </p>
+                <p
+                  class="text-sm text-slate-400 mt-1 pointer-events-none"
+                  id="student-label"
+                >
+                  PNG 파일만 가능
+                </p>
+              </div>
             </div>
 
-            <button id="go-setup-btn" class="mt-10 btn-primary">
-              <i class="fas fa-arrow-right mr-2"></i> 다음 단계 (배점 설정)
+            <button
+              id="analyze-btn"
+              class="mt-12 btn-primary px-12 py-4 text-lg shadow-lg bg-indigo-600 hover:bg-indigo-700"
+            >
+              <i class="fas fa-robot mr-2"></i> 문항 분석 시작
             </button>
-          </div>
-        </section>
-
-        <!-- STEP 2: 문항 및 배점 설정 (초기 숨김) -->
-        <section id="setup-section" class="hidden mb-12 fade-in">
-          <div
-            class="bg-white rounded-2xl shadow-sm border border-slate-200 p-10 max-w-3xl mx-auto"
-          >
-            <div class="text-center mb-8">
-              <h2 class="text-2xl font-bold text-slate-800">
-                문항 및 배점 설정
-              </h2>
-              <p class="text-slate-500 mt-1">
-                각 문항의 만점 점수를 입력해주세요.
-              </p>
-            </div>
-
-            <!-- 문항 리스트 컨테이너 -->
-            <div
-              class="bg-slate-50 rounded-xl p-6 border border-slate-200 mb-8"
-            >
-              <div id="questions-container" class="space-y-3">
-                <!-- JS로 문항 행(Row)들이 여기에 생성됩니다 -->
-              </div>
-
-              <!-- 문항 추가 버튼 -->
-              <button
-                onclick="addQuestion()"
-                class="w-full mt-4 py-3 border-2 border-dashed border-indigo-300 rounded-lg text-indigo-500 font-bold hover:bg-indigo-50 hover:border-indigo-500 transition-colors flex items-center justify-center gap-2"
-              >
-                <i class="fas fa-plus-circle"></i> 문항 추가하기
-              </button>
-            </div>
-
-            <div
-              class="flex justify-between items-center pt-4 border-t border-slate-100"
-            >
-              <div class="text-sm text-slate-500">
-                총 문항 수:
-                <span id="total-q-count" class="font-bold text-indigo-600"
-                  >5</span
-                >개
-              </div>
-              <button
-                onclick="startFinalAnalysis()"
-                class="btn-primary bg-indigo-600 hover:bg-indigo-700"
-              >
-                <i class="fas fa-chart-pie mr-2"></i> 분석 시작
-              </button>
-            </div>
           </div>
         </section>
 
         <!-- 로딩 화면 -->
         <section id="loading-section" class="hidden py-32 text-center fade-in">
           <div class="loader mx-auto mb-6"></div>
-          <h3 class="text-xl font-bold text-slate-700">
-            AI가 답안을 채점하고 있습니다...
-          </h3>
-          <p class="text-slate-500 mt-2">
-            설정된 배점을 기준으로 오답 유형을 분류 중입니다.
-          </p>
+          <h3 class="text-xl font-bold text-slate-700">답안 정밀 분석 중...</h3>
         </section>
 
-        <!-- STEP 3: 분석 결과 대시보드 -->
+        <!-- STEP 2: 문항 리스트 (결과) -->
         <section id="result-section" class="hidden fade-in">
-          <!-- 상단 요약 통계 -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="stat-card border-l-4 border-indigo-500">
-              <p class="text-sm text-slate-500 font-bold uppercase">
-                Total Students
+          <div class="flex justify-between items-end mb-6">
+            <div>
+              <h3 class="text-2xl font-bold text-slate-800">
+                분석 결과 리포트
+              </h3>
+              <p class="text-slate-500 mt-1">
+                각 문항 카드를 클릭하여 상세 오답 분석과 점수 분포를 확인하세요.
               </p>
+            </div>
+            <div class="text-right">
+              <span class="text-sm text-slate-400">전체 응시자</span>
               <p
-                class="text-3xl font-bold text-slate-800 mt-1"
-                id="res-total-students"
+                class="text-xl font-bold text-indigo-600"
+                id="total-student-count"
               >
                 0명
               </p>
             </div>
-            <div class="stat-card border-l-4 border-green-500">
-              <p class="text-sm text-slate-500 font-bold uppercase">
-                Exam Average
-              </p>
-              <p
-                class="text-3xl font-bold text-slate-800 mt-1"
-                id="res-avg-score"
-              >
-                0점
-              </p>
-            </div>
-            <div class="stat-card border-l-4 border-red-500">
-              <p class="text-sm text-slate-500 font-bold uppercase">
-                Hardest Question
-              </p>
-              <p
-                class="text-3xl font-bold text-slate-800 mt-1"
-                id="res-hardest-q"
-              >
-                Q-
-              </p>
-            </div>
           </div>
 
-          <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-            <i class="fas fa-chart-pie text-indigo-600 mr-2"></i> 문항별 오답
-            유형 분석
-          </h3>
-
-          <!-- 차트 그리드 -->
+          <!-- 문항 카드 그리드 -->
           <div
-            id="charts-grid"
-            class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+            id="questions-grid"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
-            <!-- 차트 카드들이 여기에 들어갑니다 -->
+            <!-- JS로 카드 생성됨 -->
           </div>
         </section>
       </div>
     </main>
+
+    <!-- 상세 보고서 모달 (화면 위 창) -->
+    <div
+      id="report-modal"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="bg-white w-full max-w-5xl h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden transform scale-95 transition-transform duration-300"
+        id="modal-content"
+      >
+        <!-- 모달 헤더 -->
+        <div
+          class="flex justify-between items-center px-8 py-5 border-b border-slate-100 bg-slate-50"
+        >
+          <div>
+            <span
+              class="inline-block bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded mb-1"
+              id="modal-q-num"
+              >Q1</span
+            >
+            <h2 class="text-xl font-bold text-slate-800" id="modal-title">
+              행렬의 곱셈과 역행렬
+            </h2>
+          </div>
+          <button
+            id="close-modal-btn"
+            class="text-slate-400 hover:text-slate-600 transition-colors"
+          >
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- 모달 바디 (스크롤 영역) -->
+        <div class="flex-1 overflow-y-auto p-8 bg-white">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 h-full">
+            <!-- 왼쪽: 문제 정보 & 점수 히스토그램 -->
+            <div class="flex flex-col gap-8">
+              <!-- 문제 텍스트 박스 -->
+              <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                <h4
+                  class="text-sm font-bold text-slate-500 mb-3 uppercase tracking-wide"
+                >
+                  Question Text
+                </h4>
+                <p
+                  class="text-slate-700 font-serif text-lg leading-relaxed"
+                  id="modal-q-text"
+                >
+                  <!-- 문제 텍스트 -->
+                </p>
+              </div>
+
+              <!-- 점수 히스토그램 차트 -->
+              <div
+                class="bg-white border border-slate-100 p-6 rounded-xl shadow-sm flex-1 min-h-[300px]"
+              >
+                <!-- 수정된 부분: 평균 점수 아래에 배점 추가 -->
+                <h4
+                  class="text-sm font-bold text-slate-500 mb-4 uppercase tracking-wide flex justify-between items-end"
+                >
+                  <span>Score Histogram</span>
+                  <div class="text-right">
+                    <span
+                      class="block text-xs text-indigo-600 font-bold"
+                      id="modal-avg-score"
+                      >평균: 0점</span
+                    >
+                    <span
+                      class="block text-xs text-slate-400 mt-1"
+                      id="modal-max-score"
+                      >배점: 0점</span
+                    >
+                  </div>
+                </h4>
+                <div class="relative h-64 w-full">
+                  <canvas id="detail-chart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- 오른쪽: 상세 오답 분석 (Report 형식) -->
+            <div class="flex flex-col gap-6">
+              <div class="border-l-4 border-red-400 pl-6 py-2">
+                <h4
+                  class="text-lg font-bold text-slate-800 mb-3 flex items-center"
+                >
+                  <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                  학생들이 많이 실수한 부분
+                </h4>
+                <ul
+                  class="list-disc list-outside text-slate-600 space-y-2 ml-4 text-sm"
+                  id="analysis-mistakes"
+                >
+                  <!-- 리스트 아이템 -->
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-yellow-400 pl-6 py-2">
+                <h4
+                  class="text-lg font-bold text-slate-800 mb-3 flex items-center"
+                >
+                  <i class="fas fa-eraser text-yellow-500 mr-2"></i>
+                  많이 누락된 내용
+                </h4>
+                <ul
+                  class="list-disc list-outside text-slate-600 space-y-2 ml-4 text-sm"
+                  id="analysis-missing"
+                >
+                  <!-- 리스트 아이템 -->
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-blue-400 pl-6 py-2">
+                <h4
+                  class="text-lg font-bold text-slate-800 mb-3 flex items-center"
+                >
+                  <i class="fas fa-quote-right text-blue-500 mr-2"></i>
+                  잘못 사용된 키워드
+                </h4>
+                <div class="flex flex-wrap gap-2" id="analysis-keywords">
+                  <!-- 키워드 태그 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="dashboard.js"></script>
   </body>
